@@ -25,7 +25,10 @@ var config = {
 
             ],
             onChapterExit: [
-
+              {
+                  layer: 'terrainRGB',
+                  opacity: 0
+              }
             ]
         }
         ,
