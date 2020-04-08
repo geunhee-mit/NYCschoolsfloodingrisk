@@ -78,12 +78,12 @@ var config = {
         },
         {
             id: 'blackfoot1998',
-            title: 'Blackfoot Glacier, 1998',
-            image: '',
-            description: 'Blackfoot Glacier is the second largest of the remaining 25 glaciers in Glacier National Park, Montana. Blackfoot Glacier is just to the north of Blackfoot Mountain and near Jackson Glacier. When first documented in 1850, the glacier also included the now separate Jackson Glacier and together, they covered 1,875 acres (7.59 km2). In 1850, there were an estimated 150 glaciers in the park. Glaciologists have stated that by the year 2030, all the glaciers in the park may disappear.',
+            title: 'ddddddd',
+            description: 'ddddddd.dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd',
+            image: 'img/bar.png',
             location: {
-              center: { lon: -73.99850, lat: 40.70524 },
-              zoom: 14.03,
+              center: { lon: -74.03449, lat: 40.69642 },
+              zoom: 11.33,
               pitch: 0.00,
               bearing: 0.00
             },
