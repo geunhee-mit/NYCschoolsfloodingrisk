@@ -15,8 +15,8 @@ var config = {
             image: '',
             description: ' 1. How to seperate HTML, CSS, JS if the template combined it in one html file?    2. I want to make scroll interactin only for text element(Project title ~ Research question) and then scroll down the whole page(map). How can I achieve this?    3. How can we embed charts/graphs that I made in anaconda to the webpage?    4. I am confused about onChapterEnter: /Exit in mapbox template. Could you explain how it works?',
             location: {
-              center: { lon: -74.03449, lat: 40.69642 },
-              zoom: 11.33,
+              center: { lon: -74.01049, lat: 40.69176 },
+              zoom: 8.01,
               pitch: 0.00,
               bearing: 0.00
               //https://demos.mapbox.com/location-helper/
@@ -78,8 +78,8 @@ var config = {
         },
         {
             id: 'blackfoot1998',
-            title: 'ddddddd',
-            description: 'ddddddd.dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd',
+            title: 'School location and students',
+            description: '1,126,501 students | 1,866 school facilities',
             image: 'img/bar.png',
             location: {
               center: { lon: -74.03449, lat: 40.69642 },
