@@ -10,13 +10,13 @@ var config = {
     footer: 'Source: Story text from Wikipedia, August 2019. Data from <a href="https://www.usgs.gov/centers/norock/science/retreat-glaciers-glacier-national-park">USGS</a>',
     chapters: [
         {
-            id: 'glacier-np',
-            title: 'Questions',
+            id: 'Project Statement',
+            title: 'Project Summary',
             image: '',
-            description: ' 1. How to seperate HTML, CSS, JS if the template combined it in one html file?    2. I want to make scroll interactin only for text element(Project title ~ Research question) and then scroll down the whole page(map). How can I achieve this?    3. How can we embed charts/graphs that I made in anaconda to the webpage?    4. I am confused about onChapterEnter: /Exit in mapbox template. Could you explain how it works?',
+            description: 'The project seeks to analyze the level of exposure of the school facilities and highlight the current capital investment projects the New York City local government is developing to build new schools and renovate existing schools.',
             location: {
-              center: { lon: -74.01049, lat: 40.69176 },
-              zoom: 8.01,
+              center: { lon: -74.03449, lat: 40.69642 },
+              zoom: 11.33,
               pitch: 0.00,
               bearing: 0.00
               //https://demos.mapbox.com/location-helper/
@@ -25,18 +25,15 @@ var config = {
 
             ],
             onChapterExit: [
-              {
-                  layer: 'terrainRGB',
-                  opacity: 0
-              }
+
             ]
         }
         ,
         {
-            id: 'harrison1998',
-            title: 'Harrison Glacier, 1998',
+            id: 'Problem',
+            title: 'Problem Statement',
             image: '',
-            description: 'Harrison Glacier is located in the US state of Montana in Glacier National Park. Situated on a southeast facing ridge immediately south of Mount Jackson, Harrison Glacier is the largest glacier in Glacier National Park. Compared to many of the vanishing glaciers in Glacier National Park, Harrison Glacier has a much higher altitude accumulation zone (approximately 9,000 feet (2,700 m)) which has allowed it to maintain some equilibrium in its glacier mass balance.',
+            description: 'Natural hazards cause direct impact to students and teachers, damaging and destroying the school infrastructure. In the aftermath of a disaster, the education service is disruptive, impacting in the school operations, learning and teaching processes.',
             location: {
               center: { lon: -74.03449, lat: 40.69642 },
               zoom: 11.33,
@@ -53,10 +50,10 @@ var config = {
             ]
         },
         {
-            id: 'harrison2015',
-            title: 'Harrison Glacier, 2015',
+            id: 'Researchquestion',
+            title: 'Research Question',
             image: '',
-            description: 'Between 1998 and 2015, Harrison Glacier lost 169 acres of surface area (about 37%).',
+            description: '1. How the new york city government is allocating public resources to mitigate flooding impacts in school facilities? 2. Are public resources allocated to the schools with the highest risk of flooding?',
             location: {
               center: { lon: -74.03449, lat: 40.69642 },
               zoom: 11.33,
@@ -77,13 +74,13 @@ var config = {
             ]
         },
         {
-            id: 'blackfoot1998',
+            id: 'Location',
             title: 'School location and students',
-            description: '1,126,501 students | 1,866 school facilities',
             image: 'img/bar.png',
+            description: '1,126,501 students | 1,866 school facilities',
             location: {
-              center: { lon: -74.03449, lat: 40.69642 },
-              zoom: 11.33,
+              center: { lon: -73.99850, lat: 40.70524 },
+              zoom: 14.03,
               pitch: 0.00,
               bearing: 0.00
             },
