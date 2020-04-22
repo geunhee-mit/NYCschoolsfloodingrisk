@@ -75,7 +75,7 @@ var config = {
             id: 'result',
             title: 'Results',
             image: 'img/SVG/Asset 3.svg',
-            description: '1. How the new york city government is allocating public resources to mitigate flooding impacts in school facilities? 2. Are public resources allocated to the schools with the highest risk of flooding?',
+            description: '',
             location: {
               center: { lon: -74.04696, lat: 40.67412 },
               zoom: 11.98,
@@ -97,4 +97,6 @@ var config = {
         }
 
     ]
+
+
 };
