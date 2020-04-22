@@ -1,19 +1,6 @@
 h1 {
-  font-size: 60px;
-  /* padding-top: 100px; */
-  text-align: center;
-}
-
-h3 {
-  font-size: 24px;
-  /* padding-top: 100px; */
-  text-align: center;
-}
-
-h5 {
-  font-size: 18px;
-  /* padding-top: 100px; */
-  text-align: center;
+  font-size: 22px;
+  padding-top: 100px;
 }
 
 body {
@@ -26,23 +13,18 @@ a, a:hover, a:visited {
     color: #0071bc;
 }
 
-.container {
+.title {
+  font-size: 100px;
   flex: 0 0 100vw;
   height: 100vh;
   display: flex;
   width: auto;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-}
-
-.textOnly {
-  width: 800px;
-  text-align: center;
   color: white;
   background-color: black;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
-
 
 #header {
     position: absolute;
