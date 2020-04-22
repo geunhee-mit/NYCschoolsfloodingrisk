@@ -32,7 +32,7 @@ var config = {
         {
             id: 'risk',
             title: 'Risk exposure to flooding',
-            image: '',
+            image: 'img/SVG/Asset 2.svg',
             description: '0.0 % of flood zone areas \n 0.0 schools within the floodplain zones 0.0 % of schools within floodplain zones',
             location: {
               center: { lon: -74.03449, lat: 40.69642 },
@@ -52,11 +52,11 @@ var config = {
         {
             id: 'result',
             title: 'Results',
-            image: '',
+            image: 'img/SVG/Asset 3.svg',
             description: '1. How the new york city government is allocating public resources to mitigate flooding impacts in school facilities? 2. Are public resources allocated to the schools with the highest risk of flooding?',
             location: {
-              center: { lon: -74.03449, lat: 40.69642 },
-              zoom: 11.33,
+              center: { lon: -74.04696, lat: 40.67412 },
+              zoom: 11.98,
               pitch: 0.00,
               bearing: 0.00
             },
