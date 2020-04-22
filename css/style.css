@@ -1,18 +1,24 @@
 h1 {
   font-size: 60px;
-  /* padding-top: 100px; */
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  font-size: 40px;
+  color: white;
   text-align: center;
 }
 
 h3 {
   font-size: 24px;
-  /* padding-top: 100px; */
+  color: white;
   text-align: center;
 }
 
 h5 {
   font-size: 18px;
-  /* padding-top: 100px; */
+  color: white;
   text-align: center;
 }
 
@@ -33,14 +39,14 @@ a, a:hover, a:visited {
   width: auto;
   align-items: center;
   justify-content: center;
-  background-color: black;
+  background-color: #0a0a0a;
 }
 
+
 .textOnly {
-  width: 800px;
+  width: 850px;
   text-align: center;
-  color: white;
-  background-color: black;
+
 }
 
 
@@ -59,7 +65,11 @@ a, a:hover, a:visited {
     height: 100vh;
     width:100vw;
     position: fixed;
-    z-index: -5;
+    /* z-index: -5; */
+}
+
+#maptest{
+  background-color: red;
 }
 
 #footer {
