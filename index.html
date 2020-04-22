@@ -4,6 +4,10 @@
     <meta charset='utf-8' />
     <title>NYC flooding risk</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://unpkg.com/aos@2.3.0/dist/aos.css'><link rel="stylesheet" href="./style.css">
+
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
     <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
@@ -167,28 +171,28 @@
 </div>
 
 <div class="container">
-  <div class="textOnly">
+  <div class="textOnly" data-aos="fade-up">
   <h3>The project seeks to analyze the level of exposure of the school facilities and highlight the current capital investment projects the New York City local government is developing to build new schools and renovate existing schools.</h3>
   </div>
 </div>
 
 <div class="container">
-  <div class="textOnly">
+  <div class="textOnly" data-aos="fade-up">
   <h3>Natural hazards cause direct impact to students and teachers, damaging and destroying the school infrastructure. In the aftermath of a disaster, the education service is disruptive, impacting in the school operations, learning and teaching processes.</h3>
   </div>
 </div>
 
 <div class="container">
-  <div class="textOnly">
-  <h3>1. How the new york city government is allocating public resources to mitigate flooding impacts in school facilities?
-  <br>2. Are public resources allocated to the schools with the highest risk of flooding?</h3>
+  <div class="textOnly" data-aos="fade-up">
+    <h4>1. How the new york city government is allocating public resources to mitigate flooding impacts in school facilities?
+  <h4>2. Are public resources allocated to the schools with the highest risk of flooding?</h4>
   </div>
 </div>
 
 <div id="map"></div>
 <div id="story"></div>
 
-
+<script src='https://unpkg.com/aos@2.3.0/dist/aos.js'></script>
 
 <script src="./config.js"></script>
 <script>
@@ -254,7 +258,7 @@ config.chapters.forEach((record, idx) => {
     var container = document.createElement('div');
     var chapter = document.createElement('div');
 
-    
+
 
     if (record.title) {
         var title = document.createElement('h4');
@@ -367,6 +371,7 @@ window.addEventListener('resize', scroller.resize);
   <iframe src="https://geunhee-mit.github.io/bigdata2020_pset6/circular_packing_circlepackeR1.html" style="height:600px;width:600px;">
   </iframe>
 </div>
+
 
 
 </body>

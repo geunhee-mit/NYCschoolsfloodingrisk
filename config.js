@@ -1,3 +1,7 @@
+AOS.init({
+  duration: 1200,
+})
+
 var config = {
     style: 'mapbox://styles/geunhee-mit/ck8qnjomg0e421im0fwueaxvq',
     accessToken: 'pk.eyJ1IjoiZ2V1bmhlZS1taXQiLCJhIjoiY2s4ZjBvc3JkMDF5MDNsc3k4ZXZpc3phdyJ9.ubTF4v5-Sr3trIe0ytzIZQ',
@@ -12,6 +16,7 @@ var config = {
             id: 'school',
             title: 'School location and students',
             image: 'img/SVG/Asset 1.svg',
+            // image: 'img/NYC_basemap.jpg',
             // description: 'The project seeks to analyze the level of exposure of the school facilities and highlight the current capital investment projects the New York City local government is developing to build new schools and renovate existing schools.',
             location: {
               center: { lon: -74.03449, lat: 40.69642 },
