@@ -50,8 +50,8 @@ var config = {
             ]
         },
         {
-            id: 'Researchquestion',
-            title: 'Research Question',
+            id: 'result',
+            title: 'Results',
             image: '',
             description: '1. How the new york city government is allocating public resources to mitigate flooding impacts in school facilities? 2. Are public resources allocated to the schools with the highest risk of flooding?',
             location: {
