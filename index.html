@@ -226,13 +226,13 @@ features.setAttribute('id', 'features');
 var header = document.createElement('div');
 
 if (config.title) {
-    var titleText = document.createElement('h1');
+    var titleText = document.createElement('h5');
     titleText.innerText = config.title;
     header.appendChild(titleText);
 }
 
 if (config.subtitle) {
-    var subtitleText = document.createElement('h2');
+    var subtitleText = document.createElement('h6');
     subtitleText.innerText = config.subtitle;
     header.appendChild(subtitleText);
 }
@@ -254,7 +254,7 @@ config.chapters.forEach((record, idx) => {
     var chapter = document.createElement('div');
 
     if (record.title) {
-        var title = document.createElement('h3');
+        var title = document.createElement('h4');
         title.innerText = record.title;
         chapter.appendChild(title);
     }
@@ -266,7 +266,7 @@ config.chapters.forEach((record, idx) => {
     }
 
     if (record.description) {
-        var story = document.createElement('p');
+        var story = document.createElement('h5');
         story.innerHTML = record.description;
         chapter.appendChild(story);
     }
