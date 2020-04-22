@@ -10,41 +10,40 @@
     <script src="https://unpkg.com/scrollama"></script>
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
-        h1 {
-          font-size:80px;
-          font-weight: 700;
-        }
+    h1 {
+      font-size:80px;
+      font-weight: 700;
+    }
 
-        h2 {
-          font-size:60px;
-        }
+    h2 {
+      font-size:60px;
+    }
 
-        h3 {
-          font-size:48px;
-          font-weight: 300;
-        }
+    h3 {
+      font-size:48px;
+      font-weight: 300;
+    }
 
-        h4 {
-          font-size:36px;
-          font-weight: 300;
-        }
+    h4 {
+      font-size:36px;
+      font-weight: 300;
+    }
 
-        h5 {
-          font-size:24px;
-          font-weight: 300;
-        }
+    h5 {
+      font-size:24px;
+      font-weight: 300;
+    }
 
-        h6 {
-          font-size:16px;
-          font-weight: 300;
-        }
+    h6 {
+      font-size:16px;
+      font-weight: 300;
+    }
 
         body {
             margin:0;
             padding:0;
             font-family: 'Open Sans Condensed', sans-serif;
         }
-
         a, a:hover, a:visited {
             color: #0071bc;
         }
@@ -188,6 +187,8 @@
 <div id="map"></div>
 <div id="story"></div>
 
+
+
 <script src="./config.js"></script>
 <script>
 var layerTypes = {
@@ -253,7 +254,7 @@ config.chapters.forEach((record, idx) => {
     var chapter = document.createElement('div');
 
     if (record.title) {
-        var title = document.createElement('h5');
+        var title = document.createElement('h3');
         title.innerText = record.title;
         chapter.appendChild(title);
     }
@@ -265,7 +266,7 @@ config.chapters.forEach((record, idx) => {
     }
 
     if (record.description) {
-        var story = document.createElement('h6');
+        var story = document.createElement('p');
         story.innerHTML = record.description;
         chapter.appendChild(story);
     }
@@ -358,10 +359,6 @@ map.on("load", function() {
 window.addEventListener('resize', scroller.resize);
 
 </script>
-
-<!-- <div class="container" id="footer">
-    <h1>TEST</h1>
-</div> -->
 
 </body>
 </html>
