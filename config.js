@@ -3,11 +3,9 @@ var config = {
     accessToken: 'pk.eyJ1IjoiZ2V1bmhlZS1taXQiLCJhIjoiY2s4ZjBvc3JkMDF5MDNsc3k4ZXZpc3phdyJ9.ubTF4v5-Sr3trIe0ytzIZQ',
     showMarkers: false,
     alignment: 'left',
-    theme: 'dark',
-    //title: 'Glaciers of Glacier National Park',
-    //subtitle: 'Change in coverage from 1998 to 2015',
+    theme: 'black',
     byline: '',
-    footer: 'Source: Story text from Wikipedia, August 2019. Data from <a href="https://www.usgs.gov/centers/norock/science/retreat-glaciers-glacier-national-park">USGS</a>',
+    // footer: 'Source: Story text from Wikipedia, August 2019. Data from <a href="https://www.usgs.gov/centers/norock/science/retreat-glaciers-glacier-national-park">USGS</a>',
     chapters: [
         {
             id: 'school',
@@ -41,6 +39,30 @@ var config = {
               bearing: 0.00
             },
             onChapterEnter: [
+            ],
+            onChapterExit: [
+              {
+                  layer: 'schoolground',
+                  opacity: 0
+              }
+            ]
+        },
+        {
+            id: 'budget',
+            title: 'Budget Allocation',
+            // image: 'img/SVG/Asset 3.svg',
+            description: '1. How the new york city government is allocating public resources to mitigate flooding impacts in school facilities? 2. Are public resources allocated to the schools with the highest risk of flooding?',
+            location: {
+              center: { lon: -74.04696, lat: 40.67412 },
+              zoom: 11.98,
+              pitch: 0.00,
+              bearing: 0.00
+            },
+            onChapterEnter: [
+              {
+                  layer: 'terrainRGB',
+                  opacity: 1
+              }
             ],
             onChapterExit: [
               {

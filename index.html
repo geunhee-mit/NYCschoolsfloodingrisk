@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Assignment 5</title>
+    <title>NYC flooding risk</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
@@ -10,8 +10,9 @@
     <script src="https://unpkg.com/scrollama"></script>
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
+
     h1 {
-      font-size:80px;
+      font-size:72px;
       font-weight: 700;
     }
 
@@ -60,7 +61,7 @@
         }
 
         .textOnly {
-          width: 900px;
+          width: 1000px;
           text-align: center;
           color: white;
           /* background-color: black; */
@@ -161,7 +162,7 @@
 <div class="container">
   <div class="textOnly">
   <h1>New York City's children exposure at risk from flooding hazard</h1>
-  <br><h3>Angeles Martinez, Geunhee Lee</h3>
+  <br><h4>Angeles Martinez, Geunhee Lee</h4>
   </div>
 </div>
 
@@ -359,6 +360,12 @@ map.on("load", function() {
 window.addEventListener('resize', scroller.resize);
 
 </script>
+
+<div class="container">
+  <iframe src="https://geunhee-mit.github.io/bigdata2020_pset6/circular_packing_circlepackeR1.html" style="height:600px;width:600px;">
+  </iframe>
+</div>
+
 
 </body>
 </html>
