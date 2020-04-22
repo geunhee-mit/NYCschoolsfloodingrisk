@@ -13,17 +13,18 @@ a, a:hover, a:visited {
     color: #0071bc;
 }
 
-
-
 .title {
-  font-size: 200px;
-  height: auto;
+  font-size: 100px;
+  flex: 0 0 100vw;
+  height: 100vh;
+  display: flex;
   width: auto;
   color: white;
-  background-color: red;
+  background-color: black;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
-
 
 #header {
     position: absolute;
