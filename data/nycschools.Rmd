@@ -1,0 +1,40 @@
+---
+title: "NYC schools"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r warning=FALSE}
+library(spdep)
+library(sf)
+library(tidyverse)
+library(leaflet)
+library(units)
+library(ggmap)
+library(DT)
+library(knitr)
+library(rgdal)
+```
+
+```{r}
+shp <-st_read('nycschools/nycschools.shp')
+# dsn is the folder the shape files are in. layer is the name of the file.
+shp_plot <- readOGR(dsn="nycschools", layer="nycschools")
+plot(shp_plot)
+```
+
+```{r}
+csv <- read.csv('nycschools.csv')
+datatable(head(csv))
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
