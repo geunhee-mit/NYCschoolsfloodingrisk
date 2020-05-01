@@ -12,7 +12,6 @@ var config = {
     // footer: 'Source: Story text from Wikipedia, August 2019. Data from <a href="https://www.usgs.gov/centers/norock/science/retreat-glaciers-glacier-national-park">USGS</a>',
     chapters: [
         {
-
             id: 'school',
             title: 'School location and students',
             image: 'img/SVG/Asset 1.svg',
