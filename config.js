@@ -3,7 +3,7 @@ AOS.init({
 })
 
 var config = {
-    style: 'mapbox://styles/geunhee-mit/ck8qnjomg0e421im0fwueaxvq',
+    style: 'mapbox://styles/geunhee-mit/ck8s8dr9r0sp31inxqwazbh3m',
     accessToken: 'pk.eyJ1IjoiZ2V1bmhlZS1taXQiLCJhIjoiY2s4ZjBvc3JkMDF5MDNsc3k4ZXZpc3phdyJ9.ubTF4v5-Sr3trIe0ytzIZQ',
     showMarkers: false,
     alignment: 'left',

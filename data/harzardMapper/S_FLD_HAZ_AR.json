@@ -1,0 +1,755 @@
+{
+   "currentVersion": 10.7,
+   "id": 0,
+   "name": "S_FLD_HAZ_AR",
+   "type": "Feature Layer",
+   "serviceItemId": "1e56cf3d576849d1a6936f9cdcd3511d",
+   "displayField": "",
+   "description": "",
+   "copyrightText": "",
+   "defaultVisibility": true,
+   "editingInfo": {
+      "lastEditDate": 1482857517177
+   },
+   "multiScaleGeometryInfo": {
+      "levels": [
+         7,
+         9,
+         11,
+         13
+      ]
+   },
+   "relationships": [],
+   "isDataVersioned": false,
+   "supportsAppend": true,
+   "supportsCalculate": true,
+   "supportsASyncCalculate": true,
+   "supportsTruncate": true,
+   "supportsAttachmentsByUploadId": true,
+   "supportsAttachmentsResizing": true,
+   "supportsRollbackOnFailureParameter": true,
+   "supportsStatistics": true,
+   "supportsExceedsLimitStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportsValidateSql": true,
+   "supportsCoordinatesQuantization": true,
+   "supportsFieldDescriptionProperty": true,
+   "supportsQuantizationEditMode": true,
+   "supportsApplyEditsWithGlobalIds": false,
+   "supportsMultiScaleGeometry": true,
+   "supportsReturningQueryGeometry": true,
+   "hasGeometryProperties": true,
+   "geometryProperties": {
+      "shapeAreaFieldName": "Shape__Area",
+      "shapeLengthFieldName": "Shape__Length",
+      "units": "esriMeters"
+   },
+   "advancedQueryCapabilities": {
+      "supportsPagination": true,
+      "supportsPaginationOnAggregatedQueries": true,
+      "supportsQueryRelatedPagination": true,
+      "supportsQueryWithDistance": true,
+      "supportsReturningQueryExtent": true,
+      "supportsStatistics": true,
+      "supportsOrderBy": true,
+      "supportsDistinct": true,
+      "supportsQueryWithResultType": true,
+      "supportsSqlExpression": true,
+      "supportsAdvancedQueryRelated": true,
+      "supportsCountDistinct": true,
+      "supportsPercentileStatistics": true,
+      "supportsLod": true,
+      "supportsQueryWithLodSR": false,
+      "supportedLodTypes": [
+         "geohash"
+      ],
+      "supportsReturningGeometryCentroid": true,
+      "supportsReturningGeometryProperties": true,
+      "supportsQueryWithDatumTransformation": true,
+      "supportsHavingClause": true,
+      "supportsOutFieldSQLExpression": true,
+      "supportsMaxRecordCountFactor": true,
+      "supportsTopFeaturesQuery": true,
+      "supportsDisjointSpatialRel": true,
+      "supportsQueryWithCacheHint": true
+   },
+   "useStandardizedQueries": true,
+   "geometryType": "esriGeometryPolygon",
+   "minScale": 0,
+   "maxScale": 0,
+   "extent": {
+      "xmin": -8266628,
+      "ymin": 4936793,
+      "xmax": -8204184.5,
+      "ymax": 5000210,
+      "spatialReference": {
+         "wkid": 102100,
+         "latestWkid": 3857
+      }
+   },
+   "drawingInfo": {
+      "renderer": {
+         "type": "uniqueValue",
+         "field1": "FLD_ZONE",
+         "defaultSymbol": null,
+         "uniqueValueInfos": [
+            {
+               "value": "VE",
+               "symbol": {
+                  "color": [
+                     0,
+                     132,
+                     168,
+                     255
+                  ],
+                  "outline": {
+                     "color": [
+                        194,
+                        194,
+                        194,
+                        255
+                     ],
+                     "width": 0.75,
+                     "type": "esriSLS",
+                     "style": "esriSLSSolid"
+                  },
+                  "type": "esriSFS",
+                  "style": "esriSFSSolid"
+               },
+               "label": "V Zone"
+            },
+            {
+               "value": "AE",
+               "symbol": {
+                  "color": [
+                     0,
+                     169,
+                     230,
+                     255
+                  ],
+                  "outline": {
+                     "color": [
+                        194,
+                        194,
+                        194,
+                        255
+                     ],
+                     "width": 0.75,
+                     "type": "esriSLS",
+                     "style": "esriSLSSolid"
+                  },
+                  "type": "esriSFS",
+                  "style": "esriSFSSolid"
+               },
+               "label": "A Zone"
+            },
+            {
+               "value": "A",
+               "symbol": {
+                  "color": [
+                     0,
+                     169,
+                     230,
+                     255
+                  ],
+                  "outline": {
+                     "color": [
+                        194,
+                        194,
+                        194,
+                        255
+                     ],
+                     "width": 0.75,
+                     "type": "esriSLS",
+                     "style": "esriSLSSolid"
+                  },
+                  "type": "esriSFS",
+                  "style": "esriSFSSolid"
+               },
+               "label": "A Zone"
+            },
+            {
+               "value": "AO",
+               "symbol": {
+                  "color": [
+                     0,
+                     169,
+                     230,
+                     255
+                  ],
+                  "outline": {
+                     "color": [
+                        194,
+                        194,
+                        194,
+                        255
+                     ],
+                     "width": 0.75,
+                     "type": "esriSLS",
+                     "style": "esriSLSSolid"
+                  },
+                  "type": "esriSFS",
+                  "style": "esriSFSSolid"
+               },
+               "label": "A Zone"
+            },
+            {
+               "value": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+               "symbol": {
+                  "color": [
+                     0,
+                     255,
+                     197,
+                     255
+                  ],
+                  "outline": {
+                     "color": null,
+                     "width": 0.75,
+                     "type": "esriSLS",
+                     "style": "esriSLSNull"
+                  },
+                  "type": "esriSFS",
+                  "style": "esriSFSSolid"
+               },
+               "label": "Shaded X Zone"
+            },
+            {
+               "value": "X",
+               "symbol": {
+                  "color": null,
+                  "outline": {
+                     "color": null,
+                     "width": 0.75,
+                     "type": "esriSLS",
+                     "style": "esriSLSNull"
+                  },
+                  "type": "esriSFS",
+                  "style": "esriSFSSolid"
+               },
+               "label": "V Zone"
+            },
+            {
+               "value": "OPEN WATER",
+               "symbol": {
+                  "color": null,
+                  "outline": {
+                     "color": null,
+                     "width": 0.75,
+                     "type": "esriSLS",
+                     "style": "esriSLSNull"
+                  },
+                  "type": "esriSFS",
+                  "style": "esriSFSSolid"
+               },
+               "label": "V Zone"
+            }
+         ]
+      },
+      "transparency": 0
+   },
+   "allowGeometryUpdates": true,
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeNone",
+   "hasM": false,
+   "hasZ": false,
+   "objectIdField": "FID",
+   "uniqueIdField": {
+      "name": "FID",
+      "isSystemMaintained": true
+   },
+   "globalIdField": "",
+   "typeIdField": "FLD_ZONE",
+   "fields": [
+      {
+         "name": "FID",
+         "type": "esriFieldTypeOID",
+         "actualType": "int",
+         "alias": "FID",
+         "sqlType": "sqlTypeInteger",
+         "nullable": false,
+         "editable": false,
+         "domain": null,
+         "defaultValue": null
+      },
+      {
+         "name": "FLD_AR_ID",
+         "type": "esriFieldTypeString",
+         "actualType": "nvarchar",
+         "alias": "FLD_AR_ID",
+         "sqlType": "sqlTypeNVarchar",
+         "length": 11,
+         "nullable": true,
+         "editable": true,
+         "domain": null,
+         "defaultValue": null
+      },
+      {
+         "name": "FLD_ZONE",
+         "type": "esriFieldTypeString",
+         "actualType": "nvarchar",
+         "alias": "FLD_ZONE",
+         "sqlType": "sqlTypeNVarchar",
+         "length": 55,
+         "nullable": true,
+         "editable": true,
+         "domain": null,
+         "defaultValue": null
+      },
+      {
+         "name": "FLOODWAY",
+         "type": "esriFieldTypeString",
+         "actualType": "nvarchar",
+         "alias": "FLOODWAY",
+         "sqlType": "sqlTypeNVarchar",
+         "length": 30,
+         "nullable": true,
+         "editable": true,
+         "domain": null,
+         "defaultValue": null
+      },
+      {
+         "name": "SFHA_TF",
+         "type": "esriFieldTypeString",
+         "actualType": "nvarchar",
+         "alias": "SFHA_TF",
+         "sqlType": "sqlTypeNVarchar",
+         "length": 1,
+         "nullable": true,
+         "editable": true,
+         "domain": null,
+         "defaultValue": null
+      },
+      {
+         "name": "STATIC_BFE",
+         "type": "esriFieldTypeDouble",
+         "actualType": "float",
+         "alias": "STATIC_BFE",
+         "sqlType": "sqlTypeFloat",
+         "nullable": true,
+         "editable": true,
+         "domain": null,
+         "defaultValue": null
+      },
+      {
+         "name": "V_DATUM",
+         "type": "esriFieldTypeString",
+         "actualType": "nvarchar",
+         "alias": "V_DATUM",
+         "sqlType": "sqlTypeNVarchar",
+         "length": 6,
+         "nullable": true,
+         "editable": true,
+         "domain": null,
+         "defaultValue": null
+      },
+      {
+         "name": "DEPTH",
+         "type": "esriFieldTypeDouble",
+         "actualType": "float",
+         "alias": "DEPTH",
+         "sqlType": "sqlTypeFloat",
+         "nullable": true,
+         "editable": true,
+         "domain": null,
+         "defaultValue": null
+      },
+      {
+         "name": "LEN_UNIT",
+         "type": "esriFieldTypeString",
+         "actualType": "nvarchar",
+         "alias": "LEN_UNIT",
+         "sqlType": "sqlTypeNVarchar",
+         "length": 20,
+         "nullable": true,
+         "editable": true,
+         "domain": null,
+         "defaultValue": null
+      },
+      {
+         "name": "VELOCITY",
+         "type": "esriFieldTypeDouble",
+         "actualType": "float",
+         "alias": "VELOCITY",
+         "sqlType": "sqlTypeFloat",
+         "nullable": true,
+         "editable": true,
+         "domain": null,
+         "defaultValue": null
+      },
+      {
+         "name": "VEL_UNIT",
+         "type": "esriFieldTypeString",
+         "actualType": "nvarchar",
+         "alias": "VEL_UNIT",
+         "sqlType": "sqlTypeNVarchar",
+         "length": 20,
+         "nullable": true,
+         "editable": true,
+         "domain": null,
+         "defaultValue": null
+      },
+      {
+         "name": "AR_REVERT",
+         "type": "esriFieldTypeString",
+         "actualType": "nvarchar",
+         "alias": "AR_REVERT",
+         "sqlType": "sqlTypeNVarchar",
+         "length": 6,
+         "nullable": true,
+         "editable": true,
+         "domain": null,
+         "defaultValue": null
+      },
+      {
+         "name": "BFE_REVERT",
+         "type": "esriFieldTypeDouble",
+         "actualType": "float",
+         "alias": "BFE_REVERT",
+         "sqlType": "sqlTypeFloat",
+         "nullable": true,
+         "editable": true,
+         "domain": null,
+         "defaultValue": null
+      },
+      {
+         "name": "DEP_REVERT",
+         "type": "esriFieldTypeDouble",
+         "actualType": "float",
+         "alias": "DEP_REVERT",
+         "sqlType": "sqlTypeFloat",
+         "nullable": true,
+         "editable": true,
+         "domain": null,
+         "defaultValue": null
+      },
+      {
+         "name": "SOURCE_CIT",
+         "type": "esriFieldTypeString",
+         "actualType": "nvarchar",
+         "alias": "SOURCE_CIT",
+         "sqlType": "sqlTypeNVarchar",
+         "length": 11,
+         "nullable": true,
+         "editable": true,
+         "domain": null,
+         "defaultValue": null
+      },
+      {
+         "name": "FLD_Zone_A",
+         "type": "esriFieldTypeString",
+         "actualType": "nvarchar",
+         "alias": "FLD_Zone_A",
+         "sqlType": "sqlTypeNVarchar",
+         "length": 50,
+         "nullable": true,
+         "editable": true,
+         "domain": null,
+         "defaultValue": null
+      },
+      {
+         "name": "Area",
+         "type": "esriFieldTypeDouble",
+         "actualType": "float",
+         "alias": "Area",
+         "sqlType": "sqlTypeFloat",
+         "nullable": true,
+         "editable": true,
+         "domain": null,
+         "defaultValue": null
+      },
+      {
+         "name": "Shape__Area",
+         "type": "esriFieldTypeDouble",
+         "actualType": "float",
+         "alias": "Shape__Area",
+         "sqlType": "sqlTypeFloat",
+         "nullable": true,
+         "editable": false,
+         "domain": null,
+         "defaultValue": null
+      },
+      {
+         "name": "Shape__Length",
+         "type": "esriFieldTypeDouble",
+         "actualType": "float",
+         "alias": "Shape__Length",
+         "sqlType": "sqlTypeFloat",
+         "nullable": true,
+         "editable": false,
+         "domain": null,
+         "defaultValue": null
+      }
+   ],
+   "indexes": [
+      {
+         "name": "Shape__Area_Index",
+         "fields": "Shape__Area",
+         "isAscending": true,
+         "isUnique": false,
+         "description": ""
+      },
+      {
+         "name": "Shape__Length_Index",
+         "fields": "Shape__Length",
+         "isAscending": true,
+         "isUnique": false,
+         "description": ""
+      },
+      {
+         "name": "PK__S_FLD_HA__C1BEA5A23CEABB9E",
+         "fields": "FID",
+         "isAscending": true,
+         "isUnique": true,
+         "description": "clustered, unique, primary key"
+      },
+      {
+         "name": "user_24452.S_FLD_HAZ_AR_S_FLD_HAZ_AR_Shape_sidx",
+         "fields": "Shape",
+         "isAscending": false,
+         "isUnique": false,
+         "description": "Shape Index"
+      },
+      {
+         "name": "FLD_ZONE_Index",
+         "fields": "FLD_ZONE",
+         "isAscending": true,
+         "isUnique": false,
+         "description": "FLD_ZONE_Index"
+      }
+   ],
+   "types": [
+      {
+         "id": "AE",
+         "name": "AE",
+         "domains": {},
+         "templates": [
+            {
+               "name": "AE",
+               "description": "",
+               "drawingTool": "esriFeatureEditToolNone",
+               "prototype": {
+                  "attributes": {
+                     "FLD_ZONE": "AE",
+                     "FLD_AR_ID": null,
+                     "FLOODWAY": null,
+                     "SFHA_TF": null,
+                     "STATIC_BFE": null,
+                     "V_DATUM": null,
+                     "DEPTH": null,
+                     "LEN_UNIT": null,
+                     "VELOCITY": null,
+                     "VEL_UNIT": null,
+                     "AR_REVERT": null,
+                     "BFE_REVERT": null,
+                     "DEP_REVERT": null,
+                     "SOURCE_CIT": null,
+                     "FLD_Zone_A": null,
+                     "Area": null
+                  }
+               }
+            }
+         ]
+      },
+      {
+         "id": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+         "name": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+         "domains": {},
+         "templates": [
+            {
+               "name": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+               "description": "",
+               "drawingTool": "esriFeatureEditToolNone",
+               "prototype": {
+                  "attributes": {
+                     "FLD_ZONE": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+                     "FLD_AR_ID": null,
+                     "FLOODWAY": null,
+                     "SFHA_TF": null,
+                     "STATIC_BFE": null,
+                     "V_DATUM": null,
+                     "DEPTH": null,
+                     "LEN_UNIT": null,
+                     "VELOCITY": null,
+                     "VEL_UNIT": null,
+                     "AR_REVERT": null,
+                     "BFE_REVERT": null,
+                     "DEP_REVERT": null,
+                     "SOURCE_CIT": null,
+                     "FLD_Zone_A": null,
+                     "Area": null
+                  }
+               }
+            }
+         ]
+      },
+      {
+         "id": "X",
+         "name": "X",
+         "domains": {},
+         "templates": [
+            {
+               "name": "X",
+               "description": "",
+               "drawingTool": "esriFeatureEditToolNone",
+               "prototype": {
+                  "attributes": {
+                     "FLD_ZONE": "X",
+                     "FLD_AR_ID": null,
+                     "FLOODWAY": null,
+                     "SFHA_TF": null,
+                     "STATIC_BFE": null,
+                     "V_DATUM": null,
+                     "DEPTH": null,
+                     "LEN_UNIT": null,
+                     "VELOCITY": null,
+                     "VEL_UNIT": null,
+                     "AR_REVERT": null,
+                     "BFE_REVERT": null,
+                     "DEP_REVERT": null,
+                     "SOURCE_CIT": null,
+                     "FLD_Zone_A": null,
+                     "Area": null
+                  }
+               }
+            }
+         ]
+      },
+      {
+         "id": "VE",
+         "name": "VE",
+         "domains": {},
+         "templates": [
+            {
+               "name": "VE",
+               "description": "",
+               "drawingTool": "esriFeatureEditToolNone",
+               "prototype": {
+                  "attributes": {
+                     "FLD_ZONE": "VE",
+                     "FLD_AR_ID": null,
+                     "FLOODWAY": null,
+                     "SFHA_TF": null,
+                     "STATIC_BFE": null,
+                     "V_DATUM": null,
+                     "DEPTH": null,
+                     "LEN_UNIT": null,
+                     "VELOCITY": null,
+                     "VEL_UNIT": null,
+                     "AR_REVERT": null,
+                     "BFE_REVERT": null,
+                     "DEP_REVERT": null,
+                     "SOURCE_CIT": null,
+                     "FLD_Zone_A": null,
+                     "Area": null
+                  }
+               }
+            }
+         ]
+      },
+      {
+         "id": "A",
+         "name": "A",
+         "domains": {},
+         "templates": [
+            {
+               "name": "A",
+               "description": "",
+               "drawingTool": "esriFeatureEditToolNone",
+               "prototype": {
+                  "attributes": {
+                     "FLD_ZONE": "A",
+                     "FLD_AR_ID": null,
+                     "FLOODWAY": null,
+                     "SFHA_TF": null,
+                     "STATIC_BFE": null,
+                     "V_DATUM": null,
+                     "DEPTH": null,
+                     "LEN_UNIT": null,
+                     "VELOCITY": null,
+                     "VEL_UNIT": null,
+                     "AR_REVERT": null,
+                     "BFE_REVERT": null,
+                     "DEP_REVERT": null,
+                     "SOURCE_CIT": null,
+                     "FLD_Zone_A": null,
+                     "Area": null
+                  }
+               }
+            }
+         ]
+      },
+      {
+         "id": "AO",
+         "name": "AO",
+         "domains": {},
+         "templates": [
+            {
+               "name": "AO",
+               "description": "",
+               "drawingTool": "esriFeatureEditToolNone",
+               "prototype": {
+                  "attributes": {
+                     "FLD_ZONE": "AO",
+                     "FLD_AR_ID": null,
+                     "FLOODWAY": null,
+                     "SFHA_TF": null,
+                     "STATIC_BFE": null,
+                     "V_DATUM": null,
+                     "DEPTH": null,
+                     "LEN_UNIT": null,
+                     "VELOCITY": null,
+                     "VEL_UNIT": null,
+                     "AR_REVERT": null,
+                     "BFE_REVERT": null,
+                     "DEP_REVERT": null,
+                     "SOURCE_CIT": null,
+                     "FLD_Zone_A": null,
+                     "Area": null
+                  }
+               }
+            }
+         ]
+      },
+      {
+         "id": "OPEN WATER",
+         "name": "OPEN WATER",
+         "domains": {},
+         "templates": [
+            {
+               "name": "OPEN WATER",
+               "description": "",
+               "drawingTool": "esriFeatureEditToolNone",
+               "prototype": {
+                  "attributes": {
+                     "FLD_ZONE": "OPEN WATER",
+                     "FLD_AR_ID": null,
+                     "FLOODWAY": null,
+                     "SFHA_TF": null,
+                     "STATIC_BFE": null,
+                     "V_DATUM": null,
+                     "DEPTH": null,
+                     "LEN_UNIT": null,
+                     "VELOCITY": null,
+                     "VEL_UNIT": null,
+                     "AR_REVERT": null,
+                     "BFE_REVERT": null,
+                     "DEP_REVERT": null,
+                     "SOURCE_CIT": null,
+                     "FLD_Zone_A": null,
+                     "Area": null
+                  }
+               }
+            }
+         ]
+      }
+   ],
+   "templates": [],
+   "supportedQueryFormats": "JSON, geoJSON, PBF",
+   "hasStaticData": true,
+   "maxRecordCount": 2000,
+   "standardMaxRecordCount": 4000,
+   "standardMaxRecordCountNoGeometry": 32000,
+   "tileMaxRecordCount": 4000,
+   "maxRecordCountFactor": 1,
+   "capabilities": "Query"
+}

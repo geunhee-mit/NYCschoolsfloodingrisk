@@ -1,0 +1,137 @@
+{
+  "currentVersion" : 10.7,
+  "id" : 0,
+  "name" : "1% Annual Chance Floodplain",
+  "type" : "Feature Layer",
+  "description" : "",
+  "geometryType" : "esriGeometryPolygon",
+  "copyrightText" : "",
+  "parentLayer" : null,
+  "subLayers" : [ ],
+  "minScale" : 0,
+  "maxScale" : 0,
+  "drawingInfo" : {
+    "renderer" : {
+      "type" : "simple",
+      "symbol" : {
+        "type" : "esriSFS",
+        "style" : "esriSFSSolid",
+        "color" : [ 115, 223, 255, 255 ],
+        "outline" : {
+          "type" : "esriSLS",
+          "style" : "esriSLSSolid",
+          "color" : [ 0, 0, 0, 0 ],
+          "width" : 0.4
+        }
+      },
+      "label" : "",
+      "description" : ""
+    },
+    "transparency" : 0,
+    "labelingInfo" : null
+  },
+  "defaultVisibility" : true,
+  "extent" : {
+    "xmin" : -8266290.46397585,
+    "ymin" : 4938242.436522916,
+    "xmax" : -8206876.04783202,
+    "ymax" : 5000831.563482252,
+    "spatialReference" : {
+      "wkid" : 102100,
+      "latestWkid" : 3857
+    }
+  },
+  "hasAttachments" : false,
+  "htmlPopupType" : "esriServerHTMLPopupTypeAsHTMLText",
+  "displayField" : "FLD_ZONE",
+  "typeIdField" : null,
+  "fields" : [ {
+    "name" : "FID",
+    "type" : "esriFieldTypeOID",
+    "alias" : "FID",
+    "domain" : null
+  }, {
+    "name" : "Shape",
+    "type" : "esriFieldTypeGeometry",
+    "alias" : "Shape",
+    "domain" : null
+  }, {
+    "name" : "ID",
+    "type" : "esriFieldTypeInteger",
+    "alias" : "ID",
+    "domain" : null
+  }, {
+    "name" : "GRIDCODE",
+    "type" : "esriFieldTypeInteger",
+    "alias" : "GRIDCODE",
+    "domain" : null
+  }, {
+    "name" : "ORIG_FID",
+    "type" : "esriFieldTypeInteger",
+    "alias" : "ORIG_FID",
+    "domain" : null
+  }, {
+    "name" : "CISC_BFE",
+    "type" : "esriFieldTypeSingle",
+    "alias" : "CISC_BFE",
+    "domain" : null
+  }, {
+    "name" : "Join_Count",
+    "type" : "esriFieldTypeInteger",
+    "alias" : "Join_Count",
+    "domain" : null
+  }, {
+    "name" : "TARGET_FID",
+    "type" : "esriFieldTypeInteger",
+    "alias" : "TARGET_FID",
+    "domain" : null
+  }, {
+    "name" : "FLD_ZONE",
+    "type" : "esriFieldTypeString",
+    "alias" : "FLD_ZONE",
+    "length" : 50,
+    "domain" : null
+  }, {
+    "name" : "STATIC_BFE",
+    "type" : "esriFieldTypeDouble",
+    "alias" : "STATIC_BFE",
+    "domain" : null
+  }, {
+    "name" : "ABFE_0_2Pc",
+    "type" : "esriFieldTypeInteger",
+    "alias" : "ABFE_0_2Pc",
+    "domain" : null
+  }, {
+    "name" : "Shape_Leng",
+    "type" : "esriFieldTypeDouble",
+    "alias" : "Shape_Leng",
+    "domain" : null
+  }, {
+    "name" : "Shape_Area",
+    "type" : "esriFieldTypeDouble",
+    "alias" : "Shape_Area",
+    "domain" : null
+  } ],
+  "relationships" : [ ],
+  "canModifyLayer" : false,
+  "canScaleSymbols" : false,
+  "hasLabels" : false,
+  "capabilities" : "Map",
+  "maxRecordCount" : 1000,
+  "supportsStatistics" : false,
+  "supportsAdvancedQueries" : false,
+  "supportedQueryFormats" : "JSON, AMF",
+  "ownershipBasedAccessControlForFeatures" : {
+    "allowOthersToQuery" : true
+  },
+  "advancedQueryCapabilities" : {
+    "useStandardizedQueries" : false,
+    "supportsStatistics" : false,
+    "supportsOrderBy" : false,
+    "supportsDistinct" : false,
+    "supportsPagination" : false,
+    "supportsTrueCurve" : true,
+    "supportsReturningQueryExtent" : true,
+    "supportsQueryWithDistance" : true
+  }
+}
