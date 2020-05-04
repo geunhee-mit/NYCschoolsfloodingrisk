@@ -26,12 +26,12 @@ var config = {
             },
             onChapterEnter: [
               {
-                  layer: 'nycschools-5-1sd31r',
-                  opacity: 1
-              },
-              {
                   layer: 'school-floodplain-a0lqb0',
                   opacity: 0
+              },
+              {
+                  layer: 'nycschools-5-1sd31r',
+                  opacity: 1
               }
             ],
             onChapterExit: [
