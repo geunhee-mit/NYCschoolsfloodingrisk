@@ -25,7 +25,14 @@ var config = {
               //https://demos.mapbox.com/location-helper/
             },
             onChapterEnter: [
-
+              {
+                  layer: 'nycschools-5-1sd31r',
+                  opacity: 1
+              },
+              {
+                  layer: 'school-floodplain-a0lqb0',
+                  opacity: 0
+              }
             ],
             onChapterExit: [
 
@@ -47,9 +54,12 @@ var config = {
             onChapterEnter: [
               {
                   layer: 'nycschools-5-1sd31r',
-                  opacity: 0
+                  opacity: 0.2
               },
-
+              {
+                  layer: 'school-floodplain-a0lqb0',
+                  opacity: 1
+              },
               {
                   layer: 'rateMap_2017',
                   opacity: 0.5
