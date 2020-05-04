@@ -25,7 +25,8 @@ var config = {
               //https://demos.mapbox.com/location-helper/
             },
             onChapterEnter: [
-
+              layer: 'nycschools-5-1sd31r',
+              opacity: 1
             ],
             onChapterExit: [
 
@@ -33,26 +34,38 @@ var config = {
         }
         ,
         {
-
             id: 'risk',
             title: 'Risk exposure to flooding',
             image: 'img/SVG/Asset 2.svg',
             description: '0.0 % of flood zone areas \n 0.0 schools within the floodplain zones 0.0 % of schools within floodplain zones',
             location: {
               center: { lon: -74.03449, lat: 40.69642 },
-              zoom: 11.33,
+              zoom: 9.87,
               pitch: 0.00,
               bearing: 0.00
             },
             onChapterEnter: [
+              {
+                layer: 'rateMap_2017',
+                opacity: 1
+              },
+              {
+                layer: 'sea-level-rise-maps-2020s-100-c29tkm',
+                opacity: 0.5
+              },
+              {
+                layer: 'sea-level-rise-maps-2050s-100-99sxch',
+                opacity: 0.5
+              }
             ],
             onChapterExit: [
               {
-                  layer: 'schoolground',
-                  opacity: 0
+                layer: 'nycschools-5-1sd31r',
+                opacity: 0
               }
             ]
         },
+
         {
             id: 'budget',
             title: 'Budget Allocation',
@@ -103,6 +116,4 @@ var config = {
         }
 
     ]
-
-
 };
