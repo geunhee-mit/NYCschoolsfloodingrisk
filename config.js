@@ -19,7 +19,7 @@ var config = {
             // description: 'The project seeks to analyze the level of exposure of the school facilities and highlight the current capital investment projects the New York City local government is developing to build new schools and renovate existing schools.',
             location: {
               center: { lon: -74.03449, lat: 40.69642 },
-              zoom: 11.33,
+              zoom: 10.11,
               pitch: 0.00,
               bearing: 0.00
               //https://demos.mapbox.com/location-helper/
@@ -45,12 +45,26 @@ var config = {
               bearing: 0.00
             },
             onChapterEnter: [
+              {
+                  layer: 'nycschools-5-1sd31r',
+                  opacity: 0
+              },
+
+              {
+                  layer: 'rateMap_2017',
+                  opacity: 0.5
+              },
+              {
+                  layer: 'sea-level-rise-maps-2020s-100-c29tkm',
+                  opacity: 0.5
+              },
+              {
+                  layer: 'sea-level-rise-maps-2050s-100-99sxch',
+                  opacity: 0.5
+              }
             ],
             onChapterExit: [
-              {
-                  layer: 'schoolground',
-                  opacity: 0
-              }
+
             ]
         },
         {
@@ -65,16 +79,10 @@ var config = {
               bearing: 0.00
             },
             onChapterEnter: [
-              {
-                  layer: 'terrainRGB',
-                  opacity: 1
-              }
+
             ],
             onChapterExit: [
-              {
-                  layer: 'schoolground',
-                  opacity: 0
-              }
+
             ]
         },
         {
@@ -89,16 +97,10 @@ var config = {
               bearing: 0.00
             },
             onChapterEnter: [
-              {
-                  layer: 'terrainRGB',
-                  opacity: 1
-              }
+
             ],
             onChapterExit: [
-              {
-                  layer: 'schoolground',
-                  opacity: 0
-              }
+
             ]
         }
 
