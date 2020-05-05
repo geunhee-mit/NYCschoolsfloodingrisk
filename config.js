@@ -14,7 +14,7 @@ var config = {
         {
             id: 'school',
             title: 'School location and students',
-            image: 'img/SVG/Asset 1.svg',
+            image: 'img/SVG/leg1.svg',
             // image: 'img/NYC_basemap.jpg',
             // description: 'The project seeks to analyze the level of exposure of the school facilities and highlight the current capital investment projects the New York City local government is developing to build new schools and renovate existing schools.',
             location: {
@@ -25,6 +25,14 @@ var config = {
               //https://demos.mapbox.com/location-helper/
             },
             onChapterEnter: [
+              {
+                  layer: 'schools-ratemap-2015-3r2c9x',
+                  opacity: 0
+              },
+              {
+                  layer: 'schools-2020-100-2lkivu',
+                  opacity: 0
+              },
               {
                   layer: 'school-floodplain-a0lqb0',
                   opacity: 0
@@ -43,7 +51,7 @@ var config = {
 
             id: 'risk',
             title: 'Risk exposure to flooding',
-            image: 'img/SVG/Asset 2.svg',
+            image: 'img/SVG/leg2.svg',
             description: '0.0 % of flood zone areas \n 0.0 schools within the floodplain zones 0.0 % of schools within floodplain zones',
             location: {
               center: { lon: -74.03449, lat: 40.69642 },
@@ -57,11 +65,19 @@ var config = {
                   opacity: 0.2
               },
               {
+                  layer: 'schools-ratemap-2015-3r2c9x',
+                  opacity: 1
+              },
+              {
+                  layer: 'schools-2020-100-2lkivu',
+                  opacity: 1
+              },
+              {
                   layer: 'school-floodplain-a0lqb0',
                   opacity: 1
               },
               {
-                  layer: 'rateMap_2017',
+                  layer: 'rateMap_2015',
                   opacity: 0.5
               },
               {
@@ -80,7 +96,7 @@ var config = {
         {
             id: 'budget',
             title: 'Budget Allocation',
-            // image: 'img/SVG/Asset 3.svg',
+            image: 'img/SVG/leg3.svg',
             description: '1. How the new york city government is allocating public resources to mitigate flooding impacts in school facilities? 2. Are public resources allocated to the schools with the highest risk of flooding?',
             location: {
               center: { lon: -74.04696, lat: 40.67412 },
@@ -98,7 +114,7 @@ var config = {
         {
             id: 'result',
             title: 'Results',
-            image: 'img/SVG/Asset 3.svg',
+            image: 'img/SVG/leg4.svg',
             description: '',
             location: {
               center: { lon: -74.04696, lat: 40.67412 },
