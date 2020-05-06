@@ -337,7 +337,7 @@ var map = new mapboxgl.Map({
     zoom: config.chapters[0].location.zoom,
     bearing: config.chapters[0].location.bearing,
     pitch: config.chapters[0].location.pitch,
-    scrollZoom: false,
+    // scrollZoom: false,
     transformRequest: transformRequest
 });
 
@@ -380,13 +380,27 @@ map.on("load", function() {
 // setup resize event
 window.addEventListener('resize', scroller.resize);
 
+map.scrollZoom.disable();
 
 </script>
 
-<div class="container">
-  <iframe src="https://geunhee-mit.github.io/bigdata2020_pset6/circular_packing_circlepackeR1.html" style="height:600px;width:600px;">
-  </iframe>
+<div class="container2" style="background-color:black;margin-left:4.5vw;margin-bottom:10vw;padding:5vh;height:80vh;width:85vw;justify-content:center;opacity:0.98">
+  <p>
+    <h4 style="color:white;">Budget Allocation</h4>
+    <img src="img/SVG/leg3.svg" alt="budget" width="400">
+    <iframe src="https://geunhee-mit.github.io/bigdata2020_pset6/circular_packing_circlepackeR1.html" style="height:600px;width:60vw;">
+    </iframe>
+</p>
 </div>
+
+<!-- <div class="lefty"> -->
+  <div class="container2" style="background-color:black;padding-left:3vw;padding-top:3vh;height:100vh;width:30vw;" >
+  <p>
+    <h4 style="color:white;">Result</h4>
+    <img src="img/SVG/leg4.svg" alt="result" width="400">
+  </p>
+</div>
+<!-- </div> -->
 
 
 

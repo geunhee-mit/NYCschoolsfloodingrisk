@@ -96,7 +96,7 @@ var config = {
         {
             id: 'budget',
             title: 'Budget Allocation',
-            image: 'img/SVG/leg3.svg',
+            // image: 'img/SVG/leg3.svg',
             description: '1. How the new york city government is allocating public resources to mitigate flooding impacts in school facilities? 2. Are public resources allocated to the schools with the highest risk of flooding?',
             location: {
               center: { lon: -73.98184, lat: 40.71842 },
@@ -110,25 +110,26 @@ var config = {
             onChapterExit: [
 
             ]
-        },
-        {
-            id: 'result',
-            title: 'Results',
-            image: 'img/SVG/leg4.svg',
-            description: '',
-            location: {
-              center: { lon: -74.04696, lat: 40.67412 },
-              zoom: 11.98,
-              pitch: 0.00,
-              bearing: 0.00
-            },
-            onChapterEnter: [
-
-            ],
-            onChapterExit: [
-
-            ]
         }
+        //,
+        // {
+        //     id: 'result',
+        //     title: 'Results',
+        //     image: 'img/SVG/leg4.svg',
+        //     description: '',
+        //     location: {
+        //       center: { lon: -74.04696, lat: 40.67412 },
+        //       zoom: 11.98,
+        //       pitch: 0.00,
+        //       bearing: 0.00
+        //     },
+        //     onChapterEnter: [
+        //
+        //     ],
+        //     onChapterExit: [
+        //
+        //     ]
+        // }
 
     ]
 

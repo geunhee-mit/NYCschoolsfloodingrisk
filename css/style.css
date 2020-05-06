@@ -1,4 +1,5 @@
 h1 {
+
   font-size: 60px;
   /* padding-top: 100px; */
   text-align: center;
@@ -27,13 +28,25 @@ a, a:hover, a:visited {
 }
 
 .container {
-  flex: 0 0 100vw;
+  /* flex: 0 0 100vw; */
   height: 100vh;
   display: flex;
-  width: auto;
+  /* width: auto;
   align-items: center;
-  justify-content: center;
-  background-color: black;
+  justify-content: center; */
+  /* background-color: black; */
+}
+
+.container2 {
+  /* flex: 0 0 100vw; */
+  /* left: 0px; */
+  height: 100vh;
+  display: flex;
+  /* width: 33vw; */
+  /* margin-left: 5vw; */
+  /* align-items: center;
+  justify-content: center; */
+  /* background-color: black; */
 }
 
 .textOnly {
@@ -87,6 +100,15 @@ a, a:hover, a:visited {
     width: 33vw;
     margin-left: 5vw;
 }
+.lefty .container2 {
+  height: 100vh;
+  display: flex;
+  /* padding-left: 5vw; */
+  /* align-items: center;
+  justify-content: center; */
+  background-color: black;
+}
+
 .righty {
     width: 33vw;
     margin-left: 62vw;
