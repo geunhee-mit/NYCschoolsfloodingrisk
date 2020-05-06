@@ -55,7 +55,7 @@ var config = {
             description: '0.0 % of flood zone areas \n 0.0 schools within the floodplain zones 0.0 % of schools within floodplain zones',
             location: {
               center: { lon: -74.02387, lat: 40.65117 }, //-74.03449, lat: 40.69642
-              zoom: 11.1,
+              zoom: 12,
               pitch: 200.00,
               bearing: 10
             },
