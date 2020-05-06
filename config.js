@@ -18,17 +18,17 @@ var config = {
             // image: 'img/NYC_basemap.jpg',
             // description: 'The project seeks to analyze the level of exposure of the school facilities and highlight the current capital investment projects the New York City local government is developing to build new schools and renovate existing schools.',
             location: {
-              center: { lon: -74.03449, lat: 40.69642 },
-              zoom: 10.11,
+              center: { lon: -74.03449, lat: 40.69642 }, //-74.37829, lat: 40.71238
+              zoom: 10.3,
               pitch: 0.00,
               bearing: 0.00
               //https://demos.mapbox.com/location-helper/
             },
             onChapterEnter: [
-              {
-                  layer: 'schools-ratemap-2015-3r2c9x',
-                  opacity: 0
-              },
+              // {
+              //     layer: 'schools-ratemap-2015-3r2c9x',
+              //     opacity: 0
+              // },
               {
                   layer: 'schools-2020-100-2lkivu',
                   opacity: 0
@@ -54,20 +54,20 @@ var config = {
             image: 'img/SVG/leg2.svg',
             description: '0.0 % of flood zone areas \n 0.0 schools within the floodplain zones 0.0 % of schools within floodplain zones',
             location: {
-              center: { lon: -74.03449, lat: 40.69642 },
-              zoom: 11.33,
-              pitch: 0.00,
-              bearing: 0.00
+              center: { lon: -74.02387, lat: 40.65117 }, //-74.03449, lat: 40.69642
+              zoom: 11.1,
+              pitch: 200.00,
+              bearing: 10
             },
             onChapterEnter: [
               {
                   layer: 'nycschools-5-1sd31r',
                   opacity: 0.2
               },
-              {
-                  layer: 'schools-ratemap-2015-3r2c9x',
-                  opacity: 1
-              },
+              // {
+              //     layer: 'schools-ratemap-2015-3r2c9x',
+              //     opacity: 1
+              // },
               {
                   layer: 'schools-2020-100-2lkivu',
                   opacity: 1
@@ -76,17 +76,17 @@ var config = {
                   layer: 'school-floodplain-a0lqb0',
                   opacity: 1
               },
-              {
-                  layer: 'rateMap_2015',
-                  opacity: 0.5
-              },
+              // {
+              //     layer: 'rateMap_2015',
+              //     opacity: 0.5
+              // },
               {
                   layer: 'sea-level-rise-maps-2020s-100-c29tkm',
                   opacity: 0.5
               },
               {
                   layer: 'sea-level-rise-maps-2050s-100-99sxch',
-                  opacity: 0.5
+                  opacity: 0.9
               }
             ],
             onChapterExit: [
@@ -99,10 +99,10 @@ var config = {
             image: 'img/SVG/leg3.svg',
             description: '1. How the new york city government is allocating public resources to mitigate flooding impacts in school facilities? 2. Are public resources allocated to the schools with the highest risk of flooding?',
             location: {
-              center: { lon: -74.04696, lat: 40.67412 },
-              zoom: 11.98,
+              center: { lon: -73.98184, lat: 40.71842 },
+              zoom: 12.82,
               pitch: 0.00,
-              bearing: 0.00
+              bearing: 1.11
             },
             onChapterEnter: [
 
