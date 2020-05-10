@@ -1,0 +1,37 @@
+---
+title: "circlepakcer_2"
+output: html_document
+---
+
+```{r cars}
+# Circlepacker package
+library(circlepackeR)         
+# devtools::install_github("jeromefroe/circlepackeR") # If needed
+
+# create a nested data frame giving the info of a nested dataset:
+data <- data.frame(
+  root=rep("root", 15),
+  group=c(rep("group A",5), rep("group B",5), rep("group C",5)), #FLoodzone/notFloodzone?
+  subgroup= rep(letters[1:5], each=3), #categories?
+  # subsubgroup=rep(letters[1:3], 5), #필요 없을 듯
+  value=sample(seq(1:15), 15)
+)
+
+# Change the format. This use the data.tree library. This library needs a column that looks like root/group/subgroup/..., so I build it
+library(data.tree)
+# data$pathString <- paste("world", data$group, data$subgroup, data$subsubgroup, sep = "/")
+data$pathString <- paste("world", data$group, data$subgroup, sep = "/")
+budget <- as.Node(data)
+
+# Make the plot
+circlepackeR(budget, size = "value") # Budget allocation
+
+# You can custom the minimum and maximum value of the color range.
+p <- circlepackeR(budget, size = "value", color_min = "hsl(56,80%,80%)", color_max = "hsl(341,30%,40%)")
+p2 <- circlepackeR(budget, size = "value", color_min = "hsl(56,80%,80%)", color_max = "hsl(341,30%,40%)")
+
+# save the widget
+# library(htmlwidgets)
+# saveWidget(p, file=paste0( getwd(), "circular_packing_circlepackeR2.html"))
+```
+

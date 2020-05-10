@@ -1,0 +1,99 @@
+---
+title: "circlepakcer_test"
+output: html_document
+---
+
+```{r cars}
+# Circlepacker package
+library(circlepackeR)         
+# devtools::install_github("jeromefroe/circlepackeR") # If needed
+
+# create a nested data frame giving the info of a nested dataset:
+data <- data.frame(
+  root=rep("root", 15),
+  group=c(rep("group A",5), rep("group B",5), rep("group C",5)), 
+  subgroup= rep(letters[1:5], each=3),
+  subsubgroup=rep(letters[1:3], 5),
+  value=sample(seq(1:15), 15)
+)
+
+###
+budget <- read.csv('budget.csv')
+budget_df <- data.frame(
+  # B_CODE=rep("B_CODE", 11), #root
+  # FL_ZONE=c(rep("1",5), rep("0",6)), #group
+  FL_ZONE=c(rep("1",6), rep("0",5)),
+  Other= budget$Other, #subgroup
+  Flood= budget$Flood, #subgroup
+  Sandy= budget$Sandy, #subgroup
+  Tot= budget$Tot #value
+)
+
+
+
+```
+
+```{r}
+# Change the format. This use the data.tree library. This library needs a column that looks like root/group/subgroup/..., so I build it
+library(data.tree)
+
+data$pathString <- paste("world", data$group, data$subgroup, sep = "/")
+population <- as.Node(data)
+population
+
+budget$pathString <- paste("school", budget$FL_ZONE, budget$Other, budget$Flood, budget$Tot, sep = "/")
+budget_nd <- as.Node(budget)
+budget_nd
+
+###
+```
+
+```{r}
+# Make the plot
+circlepackeR(population, size = "value")
+
+# You can custom the minimum and maximum value of the color range.
+p <- circlepackeR(population, size = "value", color_min = "hsl(56,80%,80%)",color_max = "hsl(341,30%,40%)")
+# save the widget
+# library(htmlwidgets)
+# saveWidget(p, file=paste0( getwd(), "circular_packing_circlepackeR2.html"))
+
+###
+circlepackeR(budget_nd, size="Tot" )# Budget allocation
+# b_plot <- circlepackeR(budget_nd, size = "Tot", color_min = "hsl(56,80%,80%)", color_max = "hsl(341,30%,40%)")
+b_plot <- circlepackeR(budget_nd, size = "Tot", color_min = "hsl(56,80%,80%)", color_max = "hsl(341,30%,40%)", width = 10)
+??circlepackeR
+
+```
+
+```{r}
+###color test
+# libraries
+library(packcircles)
+library(ggplot2)
+library(viridis)
+ 
+# Create data
+data <- data.frame(group=paste("Group", letters[1:20]), value=sample(seq(1,100),20)) 
+ 
+# Generate the layout. sizetype can be area or radius, following your preference on what to be proportional to value.
+packing <- circleProgressiveLayout(data$value, sizetype='area')
+data <- cbind(data, packing)
+dat.gg <- circleLayoutVertices(packing, npoints=500)
+dat.gg
+
+# Basic color customization
+ggplot() + 
+  geom_polygon(data = dat.gg, aes(x, y, 
+                                  group = id, 
+                                  fill=as.factor(id)), 
+                                  colour = "white", 
+                                  alpha = 1) +
+  # scale_fill_manual(values = magma(nrow(data))) +
+  scale_fill_manual(values = magma(20)) +
+  geom_text(data = data, aes(x, y, size=value, label = group)) +
+  scale_size_continuous(range = c(1,4)) +
+  theme_void() + 
+  theme(legend.position="none") +
+  coord_equal()
+```
