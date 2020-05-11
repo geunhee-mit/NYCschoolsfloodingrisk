@@ -82,7 +82,7 @@ function transformToGenericObjectList(flatData) {
   var regionToCountry = {};
   flatData.forEach(entry => {
     if (entry["2016"] !== "") {
-      container.children.push({group: entry["TYPE"], value: parseFloat(entry["TOT_BUDGET"]), name: entry["BLD_CODE"]});
+      container.children.push({group: entry["Region"], value: parseFloat(entry["2016"]), name: entry["Country Name"]});
     }
   });
 
@@ -90,7 +90,7 @@ function transformToGenericObjectList(flatData) {
 }
 )});
   main.variable(observer("data")).define("data", ["d3"], function(d3){return(
-d3.csv("https://raw.githubusercontent.com/geunhee-mit/scollytellingPage/master/data/csv/Capital_Budget_final.csv")
+d3.csv("https://raw.githubusercontent.com/geunhee-mit/scollytellingPage/master/data/bubble-chart-gdp-by-country_test/FLOOD_1_2.csv")
 )});
 //Data uploaded and worked: https://raw.githubusercontent.com/geunhee-mit/scollytellingPage/master/data/csv/Capital_Budget_final.csv
 //Fake data to use: https://raw.githubusercontent.com/geunhee-mit/scollytellingPage/master/data/bubble-chart-gdp-by-country_test/FLOOD_1.csv

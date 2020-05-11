@@ -2,6 +2,9 @@ AOS.init({
   duration: 1200,
 })
 
+
+
+
 var config = {
     style: 'mapbox://styles/geunhee-mit/ck8s8dr9r0sp31inxqwazbh3m',
     accessToken: 'pk.eyJ1IjoiZ2V1bmhlZS1taXQiLCJhIjoiY2s4ZjBvc3JkMDF5MDNsc3k4ZXZpc3phdyJ9.ubTF4v5-Sr3trIe0ytzIZQ',
@@ -35,23 +38,23 @@ var config = {
               },
               {
                   layer: 'schools-2020_heatmap',
-                  opacity: 0
+                  opacity: 1
               },
               {
                   layer: 'schools-2020-100-2lkivu',
-                  opacity: 0
+                  opacity: 1
               },
               {
                   layer: 'school-floodplain-a0lqb0',
-                  opacity: 0
+                  opacity: 1
               },
               {
                   layer: 'sea-level-rise-maps-2020s-100-c29tkm',
-                  opacity: 0
+                  opacity: 1
               },
               {
                   layer: 'sea-level-rise-maps-2050s-100-99sxch',
-                  opacity: 0
+                  opacity: 1
               }
             ],
             onChapterExit: [
@@ -114,17 +117,21 @@ var config = {
             },
             onChapterEnter: [
               {
+                  layer: 'schools-2020-100-2lkivu',
+                  opacity: 1
+              },
+              {
                   layer: 'nycschools-5-1sd31r',
-                  opacity: 0.9
+                  opacity: 0.5
               },
               {
                   layer: 'schools-2020_heatmap',
                   opacity: 1
               },
-              {
-                  layer: 'schools-2020-100-2lkivu',
-                  opacity: 0
-              },
+              // {
+              //     layer: 'schools-2020-100-2lkivu',
+              //     opacity: 0
+              // },
               {
                   layer: 'school-floodplain-a0lqb0',
                   opacity: 0
