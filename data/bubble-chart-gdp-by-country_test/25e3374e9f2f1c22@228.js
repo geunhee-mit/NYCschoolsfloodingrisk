@@ -21,7 +21,7 @@ d3.hierarchy(transformToGenericObjectList(data))
   main.variable(observer("chart")).define("chart", ["d3","DOM","width","height"], function(d3,DOM,width,height){return(
 function chart(root) {
   const svg = d3.select(DOM.svg(width, height));
-  
+
   var format = d3.format(",d"),
       color = d3.scaleOrdinal(d3.schemeSet3)
 
@@ -35,7 +35,7 @@ function chart(root) {
     .style("border-radius", "6px")
     .style("font", "12px sans-serif")
     .text("tooltip");
-  
+
   var bubble = d3.pack()
     .size([width, height])
     .padding(1.5);
@@ -49,8 +49,8 @@ function chart(root) {
 
   node.append("circle")
       .attr("r", function(d) { return d.r; })
-      .style("fill", function(d) { 
-          return color(d.data.group); 
+      .style("fill", function(d) {
+          return color(d.data.group);
       })
       .on("mouseover", function(d) {
           tooltip.text(d.data.name + ": " + format(d.value));
@@ -82,16 +82,19 @@ function transformToGenericObjectList(flatData) {
   var regionToCountry = {};
   flatData.forEach(entry => {
     if (entry["2016"] !== "") {
-      container.children.push({group: entry["Region"], value: parseFloat(entry["2016"]), name: entry["Country Name"]});
+      container.children.push({group: entry["TYPE"], value: parseFloat(entry["TOT_BUDGET"]), name: entry["BLD_CODE"]});
     }
   });
-  
+
   return container;
 }
 )});
   main.variable(observer("data")).define("data", ["d3"], function(d3){return(
-d3.csv("https://gist.githubusercontent.com/mmattozzi/60e2427a5af24360388fabe4de213427/raw/4d6a1842424c6b265764c7a7bb8682822be04ee6/gdp-by-country-worldbank.csv")
+d3.csv("https://raw.githubusercontent.com/geunhee-mit/scollytellingPage/master/data/csv/Capital_Budget_final.csv")
 )});
+//Data uploaded and worked: https://raw.githubusercontent.com/geunhee-mit/scollytellingPage/master/data/csv/Capital_Budget_final.csv
+//Fake data to use: https://raw.githubusercontent.com/geunhee-mit/scollytellingPage/master/data/bubble-chart-gdp-by-country_test/FLOOD_1.csv
+
   main.variable(observer("d3")).define("d3", ["require"], function(require){return(
 require("https://d3js.org/d3.v5.min.js")
 )});
