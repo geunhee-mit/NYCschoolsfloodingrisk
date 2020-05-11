@@ -50,12 +50,16 @@ vertices$size <- runif(nrow(vertices))
 mygraph <- graph_from_data_frame( edges, vertices=vertices )
  
 # left
-ggraph(mygraph, layout = 'circlepack', weight=size ) + 
+leftG<- ggraph(mygraph, layout = 'circlepack', weight=size ) + 
   geom_node_circle(aes(fill = depth)) +
   geom_node_text( aes(label=shortName, filter=leaf, fill=depth, size=size)) +
   theme_void() + 
   theme(legend.position="FALSE") + 
   scale_fill_viridis()
+
+# Turn it interactive
+widg <- ggiraph(ggobj = leftG, width_svg = 7, height_svg = 7)
+widg
 ```
 
 ```{r}

@@ -21,17 +21,25 @@ data <- data.frame(
 library(data.tree)
 # data$pathString <- paste("world", data$group, data$subgroup, data$subsubgroup, sep = "/")
 data$pathString <- paste("world", data$group, data$subgroup, sep = "/")
-budget <- as.Node(data)
-
+data_nd <- as.Node(data)
+data_nd
 # Make the plot
 circlepackeR(budget, size = "value") # Budget allocation
 
 # You can custom the minimum and maximum value of the color range.
-p <- circlepackeR(budget, size = "value", color_min = "hsl(56,80%,80%)", color_max = "hsl(341,30%,40%)")
-p2 <- circlepackeR(budget, size = "value", color_min = "hsl(56,80%,80%)", color_max = "hsl(341,30%,40%)")
+p <- circlepackeR(data_nd, size = "value", color_min = "hsl(56,80%,80%)", color_max = "hsl(341,30%,40%)")
+p2 <- circlepackeR(data_nd, size = "value", color_min = "hsl(56,80%,80%)", color_max = "hsl(341,30%,40%)")
 
 # save the widget
 # library(htmlwidgets)
 # saveWidget(p, file=paste0( getwd(), "circular_packing_circlepackeR2.html"))
 ```
 
+```{r}
+library(data.tree)
+budget <- read.csv('csv/Capital_Budget_final.csv')
+budget$pathString <- paste("world", budget$FLOOD_2020, budget$OTHER, sep = "/")
+budget_nd <- as.Node(budget)
+p <- circlepackeR(budget_nd, size = "TOT_BUDGET", color_min = "hsl(56,80%,80%)", color_max = "hsl(341,30%,40%)")
+
+```

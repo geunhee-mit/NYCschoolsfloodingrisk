@@ -73,29 +73,21 @@ var config = {
             },
             onChapterEnter: [
               {
+                  layer: 'nycschools-5-1sd31r',
+                  opacity: 0.2
+              },
+              {
                   layer: 'schools-2020_heatmap',
                   opacity: 0
               },
               {
-                  layer: 'nycschools-5-1sd31r',
-                  opacity: 0.2
-              },
-              // {
-              //     layer: 'schools-ratemap-2015-3r2c9x',
-              //     opacity: 1
-              // },
-              {
                   layer: 'schools-2020-100-2lkivu',
-                  opacity: 1
+                  opacity: 0
               },
               {
                   layer: 'school-floodplain-a0lqb0',
-                  opacity: 1
+                  opacity: 0
               },
-              // {
-              //     layer: 'rateMap_2015',
-              //     opacity: 0.5
-              // },
               {
                   layer: 'sea-level-rise-maps-2020s-100-c29tkm',
                   opacity: 0.5
@@ -122,17 +114,13 @@ var config = {
             },
             onChapterEnter: [
               {
+                  layer: 'nycschools-5-1sd31r',
+                  opacity: 0.9
+              },
+              {
                   layer: 'schools-2020_heatmap',
                   opacity: 1
               },
-              {
-                  layer: 'nycschools-5-1sd31r',
-                  opacity: 0.2
-              },
-              // {
-              //     layer: 'schools-ratemap-2015-3r2c9x',
-              //     opacity: 1
-              // },
               {
                   layer: 'schools-2020-100-2lkivu',
                   opacity: 0
@@ -141,17 +129,13 @@ var config = {
                   layer: 'school-floodplain-a0lqb0',
                   opacity: 0
               },
-              // {
-              //     layer: 'rateMap_2015',
-              //     opacity: 0.5
-              // },
               {
                   layer: 'sea-level-rise-maps-2020s-100-c29tkm',
-                  opacity: 0.5
+                  opacity: 0
               },
               {
                   layer: 'sea-level-rise-maps-2050s-100-99sxch',
-                  opacity: 0.9
+                  opacity: 0
               }
             ],
             onChapterExit: [

@@ -18,19 +18,16 @@ data <- data.frame(
 )
 
 ###
-budget <- read.csv('budget.csv')
-budget_df <- data.frame(
-  # B_CODE=rep("B_CODE", 11), #root
-  # FL_ZONE=c(rep("1",5), rep("0",6)), #group
-  FL_ZONE=c(rep("1",6), rep("0",5)),
-  Other= budget$Other, #subgroup
-  Flood= budget$Flood, #subgroup
-  Sandy= budget$Sandy, #subgroup
-  Tot= budget$Tot #value
-)
-
-
-
+budget <- read.csv('csv/Capital_Budget_final.csv')
+# budget_df <- data.frame(
+#   # B_CODE=rep("B_CODE", 11), #root
+#   # FL_ZONE=c(rep("1",5), rep("0",6)), #group
+#   FL_ZONE=c(rep("1",6), rep("0",5)),
+#   Other= budget$Other, #subgroup
+#   Flood= budget$Flood, #subgroup
+#   Sandy= budget$Sandy, #subgroup
+#   Tot= budget$Tot #value
+# )
 ```
 
 ```{r}
@@ -41,7 +38,15 @@ data$pathString <- paste("world", data$group, data$subgroup, sep = "/")
 population <- as.Node(data)
 population
 
-budget$pathString <- paste("school", budget$FL_ZONE, budget$Other, budget$Flood, budget$Tot, sep = "/")
+# budget$FL_ZONE <- budget(if(budget$FLOOD_2020=="1" || budget$FLOOD_2020=="1"){
+#   budget$FL_ZONE == 1
+# }else{
+#   budget$FL_ZONE == 0
+# })
+
+budget$pathString <- paste(budget$FLOOD_2020, 
+                           budget$OTHER, budget$FLOOD,budget$PENETRATION,budget$ROOF,budget$SANDY,
+                           budget$Sum.of.TOT_ENRO, sep = "/")
 budget_nd <- as.Node(budget)
 budget_nd
 
@@ -59,9 +64,9 @@ p <- circlepackeR(population, size = "value", color_min = "hsl(56,80%,80%)",colo
 # saveWidget(p, file=paste0( getwd(), "circular_packing_circlepackeR2.html"))
 
 ###
-circlepackeR(budget_nd, size="Tot" )# Budget allocation
+circlepackeR(budget_nd, size="TOT_BUDGET" )# Budget allocation
 # b_plot <- circlepackeR(budget_nd, size = "Tot", color_min = "hsl(56,80%,80%)", color_max = "hsl(341,30%,40%)")
-b_plot <- circlepackeR(budget_nd, size = "Tot", color_min = "hsl(56,80%,80%)", color_max = "hsl(341,30%,40%)", width = 10)
+b_plot <- circlepackeR(budget_nd, size = "TOT_BUDGET", color_min = "hsl(56,80%,80%)", color_max = "hsl(341,30%,40%)", width = 10)
 ??circlepackeR
 
 ```
@@ -96,4 +101,90 @@ ggplot() +
   theme_void() + 
   theme(legend.position="none") +
   coord_equal()
+```
+
+```{r}
+# libraries
+library(packcircles)
+library(ggplot2)
+library(viridis)
+library(ggiraph)
+
+# Create data
+data <- data.frame(group=paste("Group_", sample(letters, 70, replace=T), sample(letters, 70, replace=T), sample(letters, 70, replace=T), sep="" ), value=sample(seq(1,70),70)) 
+
+# Add a column with the text you want to display for each bubble:
+data$text <- paste("name: ",data$group, "\n", "value:", data$value, "\n", "You can add a story here!")
+
+# Generate the layout
+packing <- circleProgressiveLayout(data$value, sizetype='area')
+data <- cbind(data, packing)
+dat.gg <- circleLayoutVertices(packing, npoints=50)
+
+# Make the plot with a few differences compared to the static version:
+p <- ggplot() + 
+  geom_polygon_interactive(data = dat.gg, aes(x, y, group = id, fill=id, tooltip = data$text[id], data_id = id), colour = "black", alpha = 0.6) +
+  scale_fill_viridis() +
+  geom_text(data = data, aes(x, y, label = gsub("Group_", "", group)), size=2, color="black") +
+  theme_void() + 
+  theme(legend.position="none", plot.margin=unit(c(0,0,0,0),"cm") ) + 
+  coord_equal()
+p
+# Turn it interactive
+widg <- ggiraph(ggobj = p, width_svg = 7, height_svg = 7)
+widg
+
+# save the widget
+# library(htmlwidgets)
+# saveWidget(widg, file=paste0( getwd(), "/HtmlWidget/circular_packing_interactive.html"))
+```
+
+```{r}
+library(dplyr)
+
+budget <- read.csv('csv/Capital_Budget_final.csv') %>%
+  mutate(group_2=ifelse(budget$FLOOD_2020==0,0,1)) %>%
+  # mutate(id=ifelse(budget$OTHER==0&budget$FLOOD==0&budget$PENETRATION==0&budget$ROOF==0&budget$SANDY==0,0,1))
+  
+#id 
+#0=OTHER 1=FLOOD 1=PENETRATION 2=ROOF 3=SANDY 
+#4=OTHER+FLOOD 5=OTHER+PENE 6=OTHER+ROOF 7=OTHER+SANDY
+  
+    mutate(id_2=
+ifelse(budget$OTHER!=0&budget$FLOOD==0&budget$PENETRATION==0&budget$ROOF==0&budget$SANDY==0,"O",
+ifelse(budget$OTHER==0&budget$FLOOD!=0&budget$PENETRATION==0&budget$ROOF==0&budget$SANDY==0,"FL",
+ifelse(budget$OTHER==0&budget$FLOOD!=0&budget$PENETRATION==0&budget$ROOF==0&budget$SANDY==0,"P",
+ifelse(budget$OTHER==0&budget$FLOOD==0&budget$PENETRATION!=0&budget$ROOF==0&budget$SANDY==0,"R",
+ifelse(budget$OTHER==0&budget$FLOOD==0&budget$PENETRATION==0&budget$ROOF!=0&budget$SANDY==0,"S","IDTEST"
+
+))))))
+
+packing <- circleProgressiveLayout(budget$TOT_BUDGET, sizetype='radius')
+# ?circleProgressiveLayout
+budget_bind <- cbind(budget, packing)
+budget.gg <- circleLayoutVertices(packing, npoints=0)
+
+budget$x <- mutate(budget.gg$x)
+budget <- budget$y <- budget.gg$y
+
+?geom_polygon_interactive
+
+
+
+budget_p <- ggplot() + 
+  geom_polygon_interactive(data = budget, aes(x, y, group = group_2, fill=id_2, tooltip = data$text[id_2], data_id = id_2),colour = "black", alpha = 1) +
+  scale_fill_viridis() +
+  # geom_text(data = data, aes(x, y, label = gsub("Group_", "", group)), size=2, color="black") +
+  theme_void() + 
+  theme(
+    legend.position="none",
+    plot.background = element_rect(fill="black"),
+    plot.title = element_text(color="white") 
+  ) +
+  # theme(legend.position="none", plot.margin=unit(c(0,0,0,0),"cm") ) + 
+  coord_equal()
+budget_p
+
+# widg <- ggiraph(ggobj = budget_p, width_svg = 7, height_svg = 7)
+# widg
 ```
