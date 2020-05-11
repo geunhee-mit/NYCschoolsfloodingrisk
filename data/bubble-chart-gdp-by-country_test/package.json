@@ -1,0 +1,14 @@
+{
+  "name": "@mmattozzi/bubble-chart-gdp-by-country",
+  "main": "25e3374e9f2f1c22@228.js",
+  "version": "228.0.0",
+  "homepage": "https://observablehq.com/@mmattozzi/bubble-chart-gdp-by-country",
+  "author": {
+    "name": "Mike Mattozzi",
+    "url": "https://observablehq.com/@mmattozzi"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}

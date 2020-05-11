@@ -24,7 +24,7 @@ data$pathString <- paste("world", data$group, data$subgroup, sep = "/")
 data_nd <- as.Node(data)
 data_nd
 # Make the plot
-circlepackeR(budget, size = "value") # Budget allocation
+circlepackeR(data_nd, size = "value") # Budget allocation
 
 # You can custom the minimum and maximum value of the color range.
 p <- circlepackeR(data_nd, size = "value", color_min = "hsl(56,80%,80%)", color_max = "hsl(341,30%,40%)")
@@ -37,7 +37,10 @@ p2 <- circlepackeR(data_nd, size = "value", color_min = "hsl(56,80%,80%)", color
 
 ```{r}
 library(data.tree)
+
 budget <- read.csv('csv/Capital_Budget_final.csv')
+summary(budget$TOT_BUDGET)
+
 budget$pathString <- paste("world", budget$FLOOD_2020, budget$OTHER, sep = "/")
 budget_nd <- as.Node(budget)
 p <- circlepackeR(budget_nd, size = "TOT_BUDGET", color_min = "hsl(56,80%,80%)", color_max = "hsl(341,30%,40%)")
