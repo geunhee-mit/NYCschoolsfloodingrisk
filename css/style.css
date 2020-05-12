@@ -28,7 +28,7 @@ a, a:hover, a:visited {
 }
 
 .container {
-  /* flex: 0 0 100vw; */
+  flex: 0 0 100vw;
   height: 100vh;
   display: flex;
   /* width: auto;
