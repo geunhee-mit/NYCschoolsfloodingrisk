@@ -17,11 +17,15 @@ var graph2Height = 800;
 function chart(root, width, height, graphClass) {
   const svg = d3.select(graphClass);
 
-  var format = d3.format(",d"),
-      color = d3.scaleOrdinal(d3.schemeSet3)
+  var format = d3.format(",d");
+      // color = d3.scaleOrdinal(d3.schemeSet3)
       // floodScale = d3.scaleOrdinal().domain(["FLOOD","NEW SCHOOL","OTHER","PENET","ROOF","SANDY"])
-      //               .range(["#111","#222","#333","#444","#555","#666"])
+      //               .range(["#111111","#222222","#333333","#444444","#555555","#666666"])
       //               .attr("fill", d => floodScale(d.group));
+const nameScale = d3.scaleOrdinal()
+                  .domain(["FLOOD","NEW SCHOOL","OTHER","PENET","ROOF","SANDY"])
+                  .range(["#111111","#222222","#333333","#444444","#555555","#666666"]);
+const color = d3.scaleOrdinal(d3.schemeCategory10);
 
   var tooltip = d3.select("body").append("div")
     .style("position", "absolute")
@@ -54,9 +58,10 @@ function chart(root, width, height, graphClass) {
       //     return floodScale(d.data.group);
       // })
       .on("mouseover", function(d) {
-          tooltip.text(d.data.name + ": \n" + "$" + format(d.value));
+          tooltip.text(d.data.name + ": \n" + "$" + format(d.value) + " Type of Intervention:" + d.group);
+
           tooltip.style("visibility", "visible");
-          d3.select(this).style("stroke", "black");
+          d3.select(this).style("stroke", "white");
       })
       .on("mousemove", function() {
           return tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");
@@ -102,7 +107,8 @@ setTimeout(() => {
 
 
 var config = {
-    style: 'mapbox://styles/geunhee-mit/cka35izgd03ag1is6xi3yixxq',
+    style: 'mapbox://styles/geunhee-mit/cka3fcr1e0cpr1inra4oroqlk', //new copy
+    // style: 'mapbox://styles/geunhee-mit/ck8s8dr9r0sp31inxqwazbh3m', //original
     accessToken: 'pk.eyJ1IjoiZ2V1bmhlZS1taXQiLCJhIjoiY2s4ZjBvc3JkMDF5MDNsc3k4ZXZpc3phdyJ9.ubTF4v5-Sr3trIe0ytzIZQ',
     showMarkers: false,
     alignment: 'left',
@@ -130,7 +136,7 @@ var config = {
               // },
               {
                   layer: 'nycschools-5-1sd31r',
-                  opacity: 0
+                  opacity: 1
               },
               {
                   layer: 'schools-2020_heatmap',
@@ -214,7 +220,7 @@ var config = {
             onChapterEnter: [
               {
                   layer: 'schools-2020-100-2lkivu',
-                  opacity: 1
+                  opacity: 0
               },
               {
                   layer: 'nycschools-5-1sd31r',
@@ -234,11 +240,11 @@ var config = {
               },
               {
                   layer: 'sea-level-rise-maps-2020s-100-c29tkm',
-                  opacity: 0
+                  opacity: 0.5
               },
               {
                   layer: 'sea-level-rise-maps-2050s-100-99sxch',
-                  opacity: 0
+                  opacity: 0.9
               }
             ],
             onChapterExit: [
