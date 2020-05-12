@@ -9,6 +9,12 @@ var floodzoneData = [{"2016":"962397","BLD_CODE":"K014","Country Name":"I.S. 14 
 //사이즈 수정 필요... flood: 813,751,260, NOflood: 9,645,775,854 *0.0000001
 // 1) Budget for Schools in Floodzone/total number of schools 2) Budget for Schools Not in Floodzone/total number of schools
 // => normalize data
+
+// flood: 100 schools, budget: 1000  => per school: 10
+// no flood: 10 schools, budget: 10 => per school: 1
+
+
+
 var graph1Width = 200; //200; //81.3751260;
 var graph1Height = 200; //81.3751260;
 
@@ -26,8 +32,15 @@ function chart(root, width, height, graphClass) {
       //               .attr("fill", d => floodScale(d.group));
 const color = d3.scaleOrdinal()
                   .domain(["FLOOD","NEW SCHOOL","OTHER","PENET","ROOF","SANDY"])
-                  .range(["#0AFB60","#00FFED","#dbdbdb","#f9d423","#FB36F4","#9D00C6"]); //네온연두, 네온하늘, 회색, 네온노랑, 네온핑크, 네온보라
+                  .range(["#f9d423","#cc208e","#dbdbdb","#469fe7","#00ecbc","#9D00C6"]); //네온연두, 네온하늘, 회색, 네온노랑, 네온핑크, 네온보라
 // const color = d3.scaleOrdinal(d3.schemeCategory10);
+
+// #0AFB60
+// #00FFED
+// #dbdbdb
+// #f9d423
+// #FB36F4
+// #9D00C6
 
 // ////glow
 // //Container for the gradients
@@ -214,6 +227,10 @@ var config = {
               //     layer: 'schools-2020_heatmap',
               //     opacity: 0
               // },
+              {
+                  layer: 'schools-2050-100-clip-5a9bzn copy', //test point data
+                  opacity: 0
+              },
               {
                   layer: 'schools-2020-100-2lkivu',
                   opacity: 1
