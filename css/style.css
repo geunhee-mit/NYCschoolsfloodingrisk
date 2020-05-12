@@ -56,6 +56,18 @@ a, a:hover, a:visited {
   }
 }
 
+#bubble {
+  border-width: thick;
+  border-color: red;
+}
+
+/* .g {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+
 
 .textOnly {
   width: 800px;
