@@ -45,8 +45,8 @@ a, a:hover, a:visited {
   background-color:black;
   /* width: 33vw; */
   /* margin-left: 5vw; */
-  /* align-items: center;
-  justify-content: center; */
+  align-items: center;
+  justify-content: center;
 }
 [data-aos="example-anim2"] {
   opacity: 0;
