@@ -22,10 +22,27 @@ function chart(root, width, height, graphClass) {
       // floodScale = d3.scaleOrdinal().domain(["FLOOD","NEW SCHOOL","OTHER","PENET","ROOF","SANDY"])
       //               .range(["#111111","#222222","#333333","#444444","#555555","#666666"])
       //               .attr("fill", d => floodScale(d.group));
-const nameScale = d3.scaleOrdinal()
+const color = d3.scaleOrdinal()
                   .domain(["FLOOD","NEW SCHOOL","OTHER","PENET","ROOF","SANDY"])
-                  .range(["#111111","#222222","#333333","#444444","#555555","#666666"]);
-const color = d3.scaleOrdinal(d3.schemeCategory10);
+                  .range(["#0AFB60","#00FFED","#D1D2D4","#E5F230","#FB36F4","#9D00C6"]); //네온연두, 네온하늘, 회색, 네온노랑, 네온핑크, 네온보라
+// const color = d3.scaleOrdinal(d3.schemeCategory10);
+
+// ////glow
+// //Container for the gradients
+// var defs = svg.append("defs");
+// //Filter for the outside glow
+// var filter = defs.append("filter")
+//     .attr("id","glow");
+// filter.append("feGaussianBlur")
+//     .attr("stdDeviation","3.5")
+//     .attr("result","coloredBlur");
+// var feMerge = filter.append("feMerge");
+// feMerge.append("feMergeNode")
+//     .attr("in","coloredBlur");
+// feMerge.append("feMergeNode")
+//     .attr("in","SourceGraphic");
+
+
 
   var tooltip = d3.select("body").append("div")
     .style("position", "absolute")
@@ -41,13 +58,14 @@ const color = d3.scaleOrdinal(d3.schemeCategory10);
   var bubble = d3.pack()
     .size([width, height])
     .padding(1.5);
-  bubble(root);
+     bubble(root);
 
   var node = svg.selectAll(".node")
       .data(root.children)
       .enter().append("g")
       .attr("class", "node")
       .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+      // .style("filter", "url(#glow)");
 
   node.append("circle")
       .attr("r", function(d) { return d.r; })
@@ -59,7 +77,6 @@ const color = d3.scaleOrdinal(d3.schemeCategory10);
       // })
       .on("mouseover", function(d) {
           tooltip.text(d.data.name + ": \n" + "$" + format(d.value) + " Type of Intervention:" + d.group);
-
           tooltip.style("visibility", "visible");
           d3.select(this).style("stroke", "white");
       })
@@ -107,7 +124,7 @@ setTimeout(() => {
 
 
 var config = {
-    style: 'mapbox://styles/geunhee-mit/cka3fcr1e0cpr1inra4oroqlk', //new copy
+    style: 'mapbox://styles/geunhee-mit/cka3zzpwk0wxq1irtzr3b6wb2', //new copy
     // style: 'mapbox://styles/geunhee-mit/ck8s8dr9r0sp31inxqwazbh3m', //original
     accessToken: 'pk.eyJ1IjoiZ2V1bmhlZS1taXQiLCJhIjoiY2s4ZjBvc3JkMDF5MDNsc3k4ZXZpc3phdyJ9.ubTF4v5-Sr3trIe0ytzIZQ',
     showMarkers: false,
@@ -130,37 +147,33 @@ var config = {
               //https://demos.mapbox.com/location-helper/
             },
             onChapterEnter: [
-              // {
-              //     layer: 'schools-ratemap-2015-3r2c9x',
-              //     opacity: 0
-              // },
               {
                   layer: 'nycschools-5-1sd31r',
                   opacity: 1
-              },
-              {
-                  layer: 'schools-2020_heatmap',
-                  opacity: 0
-              },
-              {
-                  layer: 'schools-2020-100-2lkivu',
-                  opacity: 0
-              },
-              {
-                  layer: 'school-floodplain-a0lqb0',
-                  opacity: 0
-              },
-              {
-                  layer: 'sea-level-rise-maps-2020s-100-c29tkm',
-                  opacity: 0
-              },
-              {
-                  layer: 'sea-level-rise-maps-2050s-100-99sxch',
-                  opacity: 0
               }
+              // ,
+              // {
+              //     layer: 'schools-2020_heatmap',
+              //     opacity: 0
+              // },
+              // {
+              //     layer: 'schools-2020-100-2lkivu',
+              //     opacity: 0
+              // },
+              // {
+              //     layer: 'school-floodplain-a0lqb0',
+              //     opacity: 0
+              // },
+              // {
+              //     layer: 'sea-level-rise-maps-2020s-100-c29tkm',
+              //     opacity: 0
+              // },
+              // {
+              //     layer: 'sea-level-rise-maps-2050s-100-99sxch',
+              //     opacity: 0
+              // }
             ],
             onChapterExit: [
-
             ]
         }
         ,
@@ -181,17 +194,17 @@ var config = {
                   layer: 'nycschools-5-1sd31r',
                   opacity: 0.2
               },
-              {
-                  layer: 'schools-2020_heatmap',
-                  opacity: 0
-              },
+              // {
+              //     layer: 'schools-2020_heatmap',
+              //     opacity: 0
+              // },
               {
                   layer: 'schools-2020-100-2lkivu',
-                  opacity: 0
+                  opacity: 1
               },
               {
                   layer: 'school-floodplain-a0lqb0',
-                  opacity: 0
+                  opacity: 1
               },
               {
                   layer: 'sea-level-rise-maps-2020s-100-c29tkm',
@@ -199,7 +212,7 @@ var config = {
               },
               {
                   layer: 'sea-level-rise-maps-2050s-100-99sxch',
-                  opacity: 0.9
+                  opacity: 0.8
               }
             ],
             onChapterExit: [
@@ -219,32 +232,28 @@ var config = {
             },
             onChapterEnter: [
               {
-                  layer: 'schools-2020-100-2lkivu',
-                  opacity: 0
-              },
-              {
                   layer: 'nycschools-5-1sd31r',
-                  opacity: 0.5
+                  opacity: 0.2
               },
               {
                   layer: 'schools-2020_heatmap',
                   opacity: 1
               },
-              // {
-              //     layer: 'schools-2020-100-2lkivu',
-              //     opacity: 0
-              // },
+              {
+                  layer: 'schools-2020-100-2lkivu',
+                  opacity: 0
+              },
               {
                   layer: 'school-floodplain-a0lqb0',
                   opacity: 0
               },
               {
                   layer: 'sea-level-rise-maps-2020s-100-c29tkm',
-                  opacity: 0.5
+                  opacity: 0.3
               },
               {
                   layer: 'sea-level-rise-maps-2050s-100-99sxch',
-                  opacity: 0.9
+                  opacity: 0.5
               }
             ],
             onChapterExit: [
