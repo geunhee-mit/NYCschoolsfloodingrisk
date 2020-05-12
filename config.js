@@ -153,7 +153,7 @@ var config = {
         {
             id: 'school',
             title: 'School location and students',
-            image: 'img/SVG/leg_1_1.svg',
+            image: 'img/SVG/leg1_2.svg',
             // image: 'img/NYC_basemap.jpg',
             // description: 'The project seeks to analyze the level of exposure of the school facilities and highlight the current capital investment projects the New York City local government is developing to build new schools and renovate existing schools.',
             location: {
@@ -170,7 +170,7 @@ var config = {
               },
               {
                   layer: 'nycschools-5-1sd31r',
-                  opacity: 1
+                  opacity: 0.9
               }//,
               // {
               //     layer: 'schools-2050-100-clip-5a9bzn', //heatmap layer
@@ -205,8 +205,8 @@ var config = {
 
             id: 'risk',
             title: 'Risk exposure to flooding',
-            image: 'img/SVG/leg2.svg',
-            description: '0.0 % of flood zone areas \n 0.0 schools within the floodplain zones 0.0 % of schools within floodplain zones',
+            description: '206 schools are within the floodplain zones. This is 12% of the total amount of schools in NYC.',
+            image: 'img/SVG/leg2_2.svg',
             location: {
               center: { lon: -74.02387, lat: 40.65117 }, //-74.03449, lat: 40.69642
               zoom: 12,
@@ -270,8 +270,8 @@ var config = {
         {
             id: 'budget',
             title: 'Research Question',
-            // image: 'img/SVG/leg3.svg',
-            description: '1. How the new york city government is allocating public resources to mitigate flooding impacts in school facilities? 2. Are public resources allocated to the schools with the highest risk of flooding?',
+            image: 'img/SVG/rq.svg',
+            // description: '1. How the new york city government is allocating public resources to mitigate flooding impacts in school facilities? 2. Are public resources allocated to the schools with the highest risk of flooding?',
             location: {
               center: { lon: -74.15912, lat: 40.70199 },
               zoom: 10.28,

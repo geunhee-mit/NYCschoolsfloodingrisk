@@ -1,202 +1,202 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8' />
-    <title>NYC flooding risk</title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <meta charset='utf-8' />
+  <title>NYC flooding risk</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel='stylesheet' href='https://unpkg.com/aos@2.3.0/dist/aos.css'><link rel="stylesheet" href="./style.css">
-    <script src = "https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
-    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
-    <script src="https://unpkg.com/scrollama"></script>
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
+  <script src = "https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+  <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+  <script src="https://unpkg.com/scrollama"></script>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
 
-    h1 {
-      font-size:72px;
-      font-weight: 700;
+  h1 {
+    font-size:72px;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size:60px;
+  }
+
+  h3 {
+    font-size:48px;
+    font-weight: 300;
+  }
+
+  h4 {
+    font-size:36px;
+    font-weight: 300;
+  }
+
+  h5 {
+    font-size:24px;
+    font-weight: 300;
+  }
+
+  h6 {
+    font-size:16px;
+    font-weight: 300;
+  }
+
+  body {
+    margin:0;
+    padding:0;
+    font-family: 'Open Sans Condensed', sans-serif;
+    overflow-x: hidden;
+  }
+  a, a:hover, a:visited {
+    color: #0071bc;
+  }
+
+  .container {
+    flex: 0 0 100vw;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+  }
+
+  .textOnly {
+    width: 1000px;
+    text-align: center;
+    color: white;
+    /* background-color: black; */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #header {
+    position: absolute;
+    color: white;
+    margin: 0;
+    width: 100%;
+    height: 200%;
+    text-align: center;
+    padding-top: 30%;
+  }
+
+  #map {
+    top:0;
+    height: 100vh;
+    width:100vw;
+    position: fixed;
+    z-index: -5;
+  }
+
+  #footer {
+    width: 100%;
+    min-height: 5vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    text-align: center;
+    line-height: 25px;
+    font-size: 13px;
+    background-color: #000;
+  }
+  #features {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    z-index: 100;
+  }
+
+
+  .centered_2 {
+    width: 50vw;
+    margin: 0 auto;
+  }
+
+  .centered {
+    width: 50vw;
+    margin: 0 auto;
+  }
+  .lefty {
+    width: 33vw;
+    margin-left: 5vw;
+  }
+  .righty {
+    width: 33vw;
+    margin-left: 62vw;
+  }
+
+  .light {
+    color: #444;
+    background-color: #fafafa;
+  }
+  .dark {
+    color: #fafafa;
+    background-color: #444;
+  }
+  .black {
+    color: #fff;
+    background-color: #000;
+    width: 20vw;
+  }
+
+  .step {
+    padding-bottom: 50vh;
+    /* margin-bottom: 10vh; */
+    opacity: 0.25;
+  }
+  .step.active {
+    opacity: 0.9;
+  }
+
+  .step div {
+    padding:  25px 50px;
+    line-height: 25px;
+    font-size: 13px;
+  }
+
+  .step img {
+    width: 100%;
+  }
+
+  @media (max-width: 750px) {
+    #features {
+      width: 90vw;
+      margin: 0 auto;
     }
-
-    h2 {
-      font-size:60px;
-    }
-
-    h3 {
-      font-size:48px;
-      font-weight: 300;
-    }
-
-    h4 {
-      font-size:36px;
-      font-weight: 300;
-    }
-
-    h5 {
-      font-size:24px;
-      font-weight: 300;
-    }
-
-    h6 {
-      font-size:16px;
-      font-weight: 300;
-    }
-
-        body {
-            margin:0;
-            padding:0;
-            font-family: 'Open Sans Condensed', sans-serif;
-            overflow-x: hidden;
-        }
-        a, a:hover, a:visited {
-            color: #0071bc;
-        }
-
-        .container {
-          flex: 0 0 100vw;
-          top: 0;
-          height: 100vh;
-          display: flex;
-          width: auto;
-          align-items: center;
-          justify-content: center;
-          background-color: black;
-        }
-
-        .textOnly {
-          width: 1000px;
-          text-align: center;
-          color: white;
-          /* background-color: black; */
-          text-align: center;
-          align-items: center;
-          justify-content: center;
-        }
-
-        #header {
-            position: absolute;
-            color: white;
-            margin: 0;
-            width: 100%;
-            height: 200%;
-            text-align: center;
-            padding-top: 30%;
-        }
-
-        #map {
-            top:0;
-            height: 100vh;
-            width:100vw;
-            position: fixed;
-            z-index: -5;
-        }
-
-        #footer {
-            width: 100%;
-            min-height: 5vh;
-            padding-top: 2vh;
-            padding-bottom: 2vh;
-            text-align: center;
-            line-height: 25px;
-            font-size: 13px;
-            background-color: #000;
-        }
-        #features {
-            padding-top: 10vh;
-            padding-bottom: 10vh;
-            z-index: 100;
-        }
-
-
-        .centered_2 {
-            width: 50vw;
-            margin: 0 auto;
-        }
-
-        .centered {
-            width: 50vw;
-            margin: 0 auto;
-        }
-        .lefty {
-            width: 33vw;
-            margin-left: 5vw;
-        }
-        .righty {
-            width: 33vw;
-            margin-left: 62vw;
-        }
-
-        .light {
-            color: #444;
-            background-color: #fafafa;
-        }
-        .dark {
-            color: #fafafa;
-            background-color: #444;
-        }
-        .black {
-            color: #fff;
-            background-color: #000;
-            width: 20vw;
-        }
-
-        .step {
-            padding-bottom: 50vh;
-            /* margin-bottom: 10vh; */
-            opacity: 0.25;
-        }
-        .step.active {
-            opacity: 0.9;
-        }
-
-        .step div {
-            padding:  25px 50px;
-            line-height: 25px;
-            font-size: 13px;
-        }
-
-        .step img {
-            width: 100%;
-        }
-
-        @media (max-width: 750px) {
-            #features {
-                width: 90vw;
-                margin: 0 auto;
-            }
-        }
-        </style>
+  }
+  </style>
 
 </head>
 <body>
 
-<!-- <div class="black" id="header"> -->
-<div class="container">
-  <div class="textOnly">
-  <h1>New York City's children exposed to flood risk</h1>
-  <br><h4>Angeles Martinez, Geunhee Lee</h4>
+  <!-- <div class="black" id="header"> -->
+  <div class="container">
+    <div class="textOnly">
+      <h1>New York City's children exposed to flood risk</h1>
+      <br><h4>Angeles Martinez, Geunhee Lee</h4>
+    </div>
   </div>
-</div>
 
-<div class="container">
-  <div class="textOnly" data-aos="fade-up">
-  <h3>The project seeks to analyze the exposure to flood risk of the school facilities and highlight the current capital budget the New York City's local government is spending to build new schools and renovate existing schools.</h3>
+  <div class="container">
+    <div class="textOnly" data-aos="fade-up">
+      <h3>The project seeks to analyze the exposure to flood risk of the school facilities and highlight the current capital budget the New York City's local government is spending to build new schools and renovate existing schools.</h3>
+    </div>
   </div>
-</div>
 
-<div class="container">
-  <div class="textOnly" data-aos="fade-up">
-  <h3>Natural hazards cause a direct impact on students and teachers, damaging and destroying the school infrastructure. In the aftermath of a disaster, the education service is disruptive, impacting the school operations, learning, and teaching processes.</h3>
+  <div class="container">
+    <div class="textOnly" data-aos="fade-up">
+      <h3>Natural hazards cause a direct impact on students and teachers, damaging and destroying the school infrastructure. In the aftermath of a disaster, the education service is disruptive, impacting the school operations, learning, and teaching processes.</h3>
+    </div>
   </div>
-</div>
 
-<!-- <div class="container">
+  <!-- <div class="container">
   <div class="textOnly" data-aos="fade-up">
-    <h4>1. How the new york city government is allocating public resources to mitigate flooding impacts in school facilities?
+  <h4>1. How the new york city government is allocating public resources to mitigate flooding impacts in school facilities?
   <h4>2. Are public resources allocated to the schools with the highest risk of flooding?</h4>
-  </div>
+</div>
 </div> -->
 
 <div id="map"></div>
@@ -207,18 +207,18 @@
 <script src="./config.js"></script>
 <script>
 var layerTypes = {
-    'fill': ['fill-opacity'],
-    'line': ['line-opacity'],
-    'circle': ['circle-opacity', 'circle-stroke-opacity'],
-    'symbol': ['icon-opacity', 'text-opacity'],
-    'raster': ['raster-opacity'],
-    'fill-extrusion': ['fill-extrusion-opacity']
+  'fill': ['fill-opacity'],
+  'line': ['line-opacity'],
+  'circle': ['circle-opacity', 'circle-stroke-opacity'],
+  'symbol': ['icon-opacity', 'text-opacity'],
+  'raster': ['raster-opacity'],
+  'fill-extrusion': ['fill-extrusion-opacity']
 }
 
 var alignments = {
-    'left': 'lefty',
-    'center': 'centered',
-    'right': 'righty'
+  'left': 'lefty',
+  'center': 'centered',
+  'right': 'righty'
 }
 
 var id = {
@@ -229,15 +229,15 @@ var id = {
 
 
 function getLayerPaintType(layer) {
-    var layerType = map.getLayer(layer).type;
-    return layerTypes[layerType];
+  var layerType = map.getLayer(layer).type;
+  return layerTypes[layerType];
 }
 
 function setLayerOpacity(layer) {
-    var paintProps = getLayerPaintType(layer.layer);
-    paintProps.forEach(function(prop) {
-        map.setPaintProperty(layer.layer, prop, layer.opacity);
-    });
+  var paintProps = getLayerPaintType(layer.layer);
+  paintProps.forEach(function(prop) {
+    map.setPaintProperty(layer.layer, prop, layer.opacity);
+  });
 }
 
 var story = document.getElementById('story');
@@ -249,60 +249,60 @@ features.setAttribute('id', 'features');
 var header = document.createElement('div');
 
 if (config.title) {
-    var titleText = document.createElement('h5');
-    titleText.innerText = config.title;
-    header.appendChild(titleText);
+  var titleText = document.createElement('h5');
+  titleText.innerText = config.title;
+  header.appendChild(titleText);
 }
 
 if (config.subtitle) {
-    var subtitleText = document.createElement('h6');
-    subtitleText.innerText = config.subtitle;
-    header.appendChild(subtitleText);
+  var subtitleText = document.createElement('h6');
+  subtitleText.innerText = config.subtitle;
+  header.appendChild(subtitleText);
 }
 
 if (config.byline) {
-    var bylineText = document.createElement('p');
-    bylineText.innerText = config.byline;
-    header.appendChild(bylineText);
+  var bylineText = document.createElement('p');
+  bylineText.innerText = config.byline;
+  header.appendChild(bylineText);
 }
 
 if (header.innerText.length > 0) {
-    header.classList.add(config.theme);
-    header.setAttribute('id', 'header');
-    story.appendChild(header);
+  header.classList.add(config.theme);
+  header.setAttribute('id', 'header');
+  story.appendChild(header);
 }
 
 config.chapters.forEach((record, idx) => {
-    var container = document.createElement('div');
-    var chapter = document.createElement('div');
+  var container = document.createElement('div');
+  var chapter = document.createElement('div');
 
-    if (record.title) {
-        var title = document.createElement('h4');
-        title.innerText = record.title;
-        chapter.appendChild(title);
-    }
+  if (record.title) {
+    var title = document.createElement('h4');
+    title.innerText = record.title;
+    chapter.appendChild(title);
+  }
 
-    if (record.image) {
-        var image = new Image();
-        image.src = record.image;
-        chapter.appendChild(image);
-    }
+  if (record.image) {
+    var image = new Image();
+    image.src = record.image;
+    chapter.appendChild(image);
+  }
 
-    if (record.description) {
-        var story = document.createElement('h5');
-        story.innerHTML = record.description;
-        chapter.appendChild(story);
-    }
+  if (record.description) {
+    var story = document.createElement('h5');
+    story.innerHTML = record.description;
+    chapter.appendChild(story);
+  }
 
-    container.setAttribute('id', record.id);
-    container.classList.add('step');
-    if (idx === 0) {
-        container.classList.add('active');
-    }
+  container.setAttribute('id', record.id);
+  container.classList.add('step');
+  if (idx === 0) {
+    container.classList.add('active');
+  }
 
-    chapter.classList.add(config.theme);
-    container.appendChild(chapter);
-    features.appendChild(container);
+  chapter.classList.add(config.theme);
+  container.appendChild(chapter);
+  features.appendChild(container);
 });
 
 story.appendChild(features);
@@ -310,72 +310,72 @@ story.appendChild(features);
 var footer = document.createElement('div');
 
 if (config.footer) {
-    var footerText = document.createElement('p');
-    footerText.innerHTML = config.footer;
-    footer.appendChild(footerText);
+  var footerText = document.createElement('p');
+  footerText.innerHTML = config.footer;
+  footer.appendChild(footerText);
 }
 
 if (footer.innerText.length > 0) {
-    footer.classList.add(config.theme);
-    footer.setAttribute('id', 'footer');
-    story.appendChild(footer);
+  footer.classList.add(config.theme);
+  footer.setAttribute('id', 'footer');
+  story.appendChild(footer);
 }
 
 mapboxgl.accessToken = config.accessToken;
 
 const transformRequest = (url) => {
-    const hasQuery = url.indexOf("?") !== -1;
-    const suffix = hasQuery ? "&pluginName=journalismScrollytelling" : "?pluginName=journalismScrollytelling";
-    return {
-      url: url + suffix
-    }
+  const hasQuery = url.indexOf("?") !== -1;
+  const suffix = hasQuery ? "&pluginName=journalismScrollytelling" : "?pluginName=journalismScrollytelling";
+  return {
+    url: url + suffix
+  }
 }
 
 var map = new mapboxgl.Map({
-    container: 'map',
-    style: config.style,
-    center: config.chapters[0].location.center,
-    zoom: config.chapters[0].location.zoom,
-    bearing: config.chapters[0].location.bearing,
-    pitch: config.chapters[0].location.pitch,
-    // scrollZoom: false,
-    transformRequest: transformRequest
+  container: 'map',
+  style: config.style,
+  center: config.chapters[0].location.center,
+  zoom: config.chapters[0].location.zoom,
+  bearing: config.chapters[0].location.bearing,
+  pitch: config.chapters[0].location.pitch,
+  // scrollZoom: false,
+  transformRequest: transformRequest
 });
 
 var marker = new mapboxgl.Marker();
 if (config.showMarkers) {
-    marker.setLngLat(config.chapters[0].location.center).addTo(map);
+  marker.setLngLat(config.chapters[0].location.center).addTo(map);
 }
 
 // instantiate the scrollama
 var scroller = scrollama();
 
 map.on("load", function() {
-    // setup the instance, pass callback functions
-    scroller
-    .setup({
-        step: '.step',
-        offset: 0.5,
-        progress: true
-    })
-    .onStepEnter(response => {
-        var chapter = config.chapters.find(chap => chap.id === response.element.id);
-        response.element.classList.add('active');
-        map.flyTo(chapter.location);
-        if (config.showMarkers) {
-            marker.setLngLat(chapter.location.center);
-        }
-        if (chapter.onChapterEnter.length > 0) {
-            chapter.onChapterEnter.forEach(setLayerOpacity);
-        }
-    })
-    .onStepExit(response => {
-        var chapter = config.chapters.find(chap => chap.id === response.element.id);
-        response.element.classList.remove('active');
-        if (chapter.onChapterExit.length > 0) {
-            chapter.onChapterExit.forEach(setLayerOpacity);
-        }
-    });
+  // setup the instance, pass callback functions
+  scroller
+  .setup({
+    step: '.step',
+    offset: 0.5,
+    progress: true
+  })
+  .onStepEnter(response => {
+    var chapter = config.chapters.find(chap => chap.id === response.element.id);
+    response.element.classList.add('active');
+    map.flyTo(chapter.location);
+    if (config.showMarkers) {
+      marker.setLngLat(chapter.location.center);
+    }
+    if (chapter.onChapterEnter.length > 0) {
+      chapter.onChapterEnter.forEach(setLayerOpacity);
+    }
+  })
+  .onStepExit(response => {
+    var chapter = config.chapters.find(chap => chap.id === response.element.id);
+    response.element.classList.remove('active');
+    if (chapter.onChapterExit.length > 0) {
+      chapter.onChapterExit.forEach(setLayerOpacity);
+    }
+  });
 });
 
 // setup resize event
@@ -385,22 +385,45 @@ map.scrollZoom.disable();
 
 </script>
 
+
+<!-- <div class="container2" style="background-color:black;height:300vh;"> -->
+
 <div class="container2" data-aos="example-anim2" style="background-color:black;padding-left:3vw;padding-top:3vh;height:100vh;width:100vw;justify-content:center;opacity:1">
+  <table style="width: 1028px;">
+    <tbody>
+      <tr style="height: 23px;">
+        <td style="height: 23px; width: 400px;"><h4 style="color:white;">Budget Allocation</h4></td>
+        <td style="height: 23px; width: 400px;"><h5 style="color:white;text-align: center;">Within floodplain zone</h5></td>
+        <td style="height: 23px; width: 400px;"><h5 style="color:white;text-align: center;">Within floodplain zone</h5></td>
+      </tr>
+      <!-- <tr style="height: 23px;">
+        <td style="height: 23px; width: 250px;"></td>
+        <td style="height: 23px; width: 400px;"><h5 style="color:white;text-align: center;">Within floodplain zone</h5></td>
+        <td style="height: 23px; width: 400px;"><h5 style="color:white;text-align: center;">Within floodplain zone</h5></td>
+      </tr> -->
+      <tr style="height: 432px;">
+        <td style="height: 432px; width: 400px;"><img src="img/SVG/leg3.svg" alt="budget" width="500"></td>
+        <td style="height: 432px; width: 400px;">
+          <svg class="graph1" width="200" height="200"></svg>
+        </td>
+        <td style="height: 432px; width: 400px;">
+          <svg class="graph2" width="700" height="700"></svg>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
   <!-- style="background-color:black;margin-left:4.5vw;margin-bottom:10vw;padding:5vh;height:80vh;width:85vw;justify-content:center;opacity:1" -->
-  <p>
-    <h4 style="color:white;">Budget Allocation</h4>
-    <img src="img/SVG/leg3.svg" alt="budget" width="500">
-      <!-- <svg class="graph1" width="200" height="200"></svg> -->
-      <svg class="graph1" width="200" height="200" transform="translateY:-50%"></svg>
-      <svg class="graph2" width="700" height="700" transform="translateY:-50%"></svg>
-    <!-- <iframe src="https://geunhee-mit.github.io/bigdata2020_pset6/circular_packing_circlepackeR1.html" style="height:600px;width:60vw;">
-    </iframe> -->
-  </p>
+  <!-- <img src="img/SVG/leg3.svg" alt="budget" width="500"> -->
+  <!-- <svg class="graph1" width="200" height="200"></svg> -->
+  <!-- <svg class="graph2" width="700" height="700"></svg> -->
+  <!-- <iframe src="https://geunhee-mit.github.io/bigdata2020_pset6/circular_packing_circlepackeR1.html" style="height:600px;width:60vw;">
+</iframe> -->
 </div>
 
 <!-- <div class="lefty"> -->
-  <div class="container2" style="background-color:black;padding-left:3vw;padding-top:3vh;height:100vh;width:30vw;" >
-    <!-- style="padding-left:3vw;padding-top:3vh;height:100vh;width:30vw;" -->
+<div class="container2" style="background-color:black;padding-left:3vw;padding-top:3vh;height:100vh;width:30vw;" >
+  <!-- style="padding-left:3vw;padding-top:3vh;height:100vh;width:30vw;" -->
   <p>
     <h4 style="color:white;">Result</h4>
     <img src="img/SVG/leg4.svg" alt="result" width="500">

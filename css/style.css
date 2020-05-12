@@ -47,6 +47,8 @@ a, a:hover, a:visited {
   /* margin-left: 5vw; */
   align-items: center;
   justify-content: center;
+  /* z-index: 2000;
+  transform: translateY(1000px); */
 }
 [data-aos="example-anim2"] {
   opacity: 0;
