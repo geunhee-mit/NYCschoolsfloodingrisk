@@ -140,7 +140,7 @@ var config = {
         {
             id: 'school',
             title: 'School location and students',
-            image: 'img/SVG/leg1_1.svg',
+            image: 'img/SVG/leg_1_1.svg',
             // image: 'img/NYC_basemap.jpg',
             // description: 'The project seeks to analyze the level of exposure of the school facilities and highlight the current capital investment projects the New York City local government is developing to build new schools and renovate existing schools.',
             location: {
