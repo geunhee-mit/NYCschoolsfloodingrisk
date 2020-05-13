@@ -13,13 +13,13 @@ var floodzoneData = [{"BLD_CODE":"K014","SCH_NAME":"I.S. 14 - BROOKLYN","TYPE":"
 // flood: 100 schools, budget: 1000  => per school: 10
 // no flood: 10 schools, budget: 10 => per school: 1
 
+//1:12
 
+var graph1Width = 66; //200; //81.3751260;
+var graph1Height = 66; //81.3751260;
 
-var graph1Width = 200; //200; //81.3751260;
-var graph1Height = 200; //81.3751260;
-
-var graph2Width = 700; //700; //964.5775854;
-var graph2Height = 700; //964.5775854;
+var graph2Width = 800; //700; //964.5775854;
+var graph2Height = 800; //964.5775854;
 
 // 차트 함수 (데이터, 가로길이, 세로길이, 그래프 svg 클래스 이름)
 function chart(root, width, height, graphClass) {
