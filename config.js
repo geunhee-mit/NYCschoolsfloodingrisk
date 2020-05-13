@@ -159,7 +159,7 @@ setTimeout(() => {
 
 
 var config = {
-    style: 'mapbox://styles/geunhee-mit/cka4fuj0503af1jok4d68toef', //new copy
+    style: 'mapbox://styles/geunhee-mit/cka4vznwd0j2k1im4jloiwh92', //new copy
     // style: 'mapbox://styles/geunhee-mit/ck8s8dr9r0sp31inxqwazbh3m', //original
     accessToken: 'pk.eyJ1IjoiZ2V1bmhlZS1taXQiLCJhIjoiY2s4ZjBvc3JkMDF5MDNsc3k4ZXZpc3phdyJ9.ubTF4v5-Sr3trIe0ytzIZQ',
     showMarkers: false,
