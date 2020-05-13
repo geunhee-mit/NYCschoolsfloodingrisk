@@ -159,7 +159,7 @@ setTimeout(() => {
 
 
 var config = {
-    style: 'mapbox://styles/geunhee-mit/cka4ym24u0lkr1iox4sdsph1v', //new copy
+    style: 'mapbox://styles/geunhee-mit/cka5cfg7g0ftx1jn57s1t4fbx', //new copy
     // style: 'mapbox://styles/geunhee-mit/ck8s8dr9r0sp31inxqwazbh3m', //original
     accessToken: 'pk.eyJ1IjoiZ2V1bmhlZS1taXQiLCJhIjoiY2s4ZjBvc3JkMDF5MDNsc3k4ZXZpc3phdyJ9.ubTF4v5-Sr3trIe0ytzIZQ',
     showMarkers: false,
@@ -182,10 +182,10 @@ var config = {
               //https://demos.mapbox.com/location-helper/
             },
             onChapterEnter: [
-              {
-                  layer: 'schools-2050-100-clip-5a9bzn copy', //test point data
-                  opacity: 0
-              },
+              // {
+              //     layer: 'schools-2050-100-clip-5a9bzn copy', //test point data
+              //     opacity: 0
+              // },
               {
                   layer: 'nycschools-5-1sd31r',
                   opacity: 0.9
