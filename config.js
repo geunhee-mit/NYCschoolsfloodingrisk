@@ -15,8 +15,8 @@ var floodzoneData = [{"BLD_CODE":"K014","SCH_NAME":"I.S. 14 - BROOKLYN","TYPE":"
 
 //1:12
 
-var graph1Width = 66; //200; //81.3751260;
-var graph1Height = 66; //81.3751260;
+var graph1Width = 250; //200; //81.3751260;
+var graph1Height = 250; //81.3751260;
 
 var graph2Width = 800; //700; //964.5775854;
 var graph2Height = 800; //964.5775854;
@@ -159,7 +159,7 @@ setTimeout(() => {
 
 
 var config = {
-    style: 'mapbox://styles/geunhee-mit/cka4vznwd0j2k1im4jloiwh92', //new copy
+    style: 'mapbox://styles/geunhee-mit/cka4ym24u0lkr1iox4sdsph1v', //new copy
     // style: 'mapbox://styles/geunhee-mit/ck8s8dr9r0sp31inxqwazbh3m', //original
     accessToken: 'pk.eyJ1IjoiZ2V1bmhlZS1taXQiLCJhIjoiY2s4ZjBvc3JkMDF5MDNsc3k4ZXZpc3phdyJ9.ubTF4v5-Sr3trIe0ytzIZQ',
     showMarkers: false,
